@@ -3,6 +3,14 @@ Base scraper: undetected_chromedriver + Selenium.
 
 Provides the shared multi-location orchestration loop (including the
 ``skip_covered_locations`` toggle) and common browser helpers.
+
+Scraping is split into two phases:
+
+1. **Stub collection** — ``scrape_locations`` paginates through search
+   results and returns lightweight listing stubs.
+2. **Detail enrichment** — ``enrich_listings`` visits each stub's
+   detail page and fills in the remaining fields.  The orchestrator
+   (``run_scrapers.py``) decides whether and when to run this phase.
 """
 
 import logging
@@ -59,23 +67,25 @@ class BaseScraper(ABC):
         self,
         headless: bool = False,
         skip_covered_locations: bool = True,
-        fetch_details: bool = True,
         max_price: Optional[int] = None,
         min_price: Optional[int] = None,
         min_beds: Optional[int] = None,
         max_beds: Optional[int] = None,
         min_baths: Optional[int] = None,
         max_baths: Optional[int] = None,
+        min_sqft: Optional[int] = None,
+        max_sqft: Optional[int] = None,
     ):
         self.headless = headless
         self.skip_covered_locations = skip_covered_locations
-        self.fetch_details = fetch_details
         self.max_price = max_price
         self.min_price = min_price
         self.min_beds = min_beds
         self.max_beds = max_beds
         self.min_baths = min_baths
         self.max_baths = max_baths
+        self.min_sqft = min_sqft
+        self.max_sqft = max_sqft
 
         self.driver: Optional[uc.Chrome] = None
         self.wait: Optional[WebDriverWait] = None
@@ -95,7 +105,7 @@ class BaseScraper(ABC):
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--lang=en-CA")
-        return uc.Chrome(options=options, version_main=147)
+        return uc.Chrome(options=options, version_main=148)
 
     def start(self):
         logger.info(f"Starting {self.SITE_NAME} scraper")
@@ -210,9 +220,10 @@ class BaseScraper(ABC):
         locations: List[str],
         max_pages: int = 50,
     ) -> List[RentalListing]:
-        """
-        Search every location in *locations*, skipping those already
-        covered when ``skip_covered_locations`` is enabled.
+        """Collect listing stubs from every *location*.
+
+        Returns raw stubs only — detail-page enrichment is handled
+        separately by :class:`DetailEnricher`.
         """
         all_listings: List[RentalListing] = []
         self._seen_ids.clear()
@@ -244,10 +255,7 @@ class BaseScraper(ABC):
             all_listings.extend(listings)
             logger.info(f"Found {len(listings)} listings in {loc}")
 
-        # Hook for detail-page enrichment etc.
-        all_listings = self._post_scrape(all_listings)
-
-        logger.info(f"Total unique listings: {len(all_listings)}")
+        logger.info(f"Total unique stubs: {len(all_listings)}")
         return all_listings
 
     def _is_location_covered(self, location: str) -> bool:
@@ -256,9 +264,17 @@ class BaseScraper(ABC):
             loc in s.lower() or s.lower() in loc for s in self._seen_cities
         )
 
-    def _post_scrape(self, listings: List[RentalListing]) -> List[RentalListing]:
-        """Override in subclasses for detail-page enrichment."""
-        return listings
+    # ── Detail enrichment (subclass hook) ──────────────────────────
+
+    def enrich_listings(
+        self, stubs: List[RentalListing]
+    ) -> List[RentalListing]:
+        """Visit detail pages and return enriched listings.
+
+        Override in subclasses.  The default implementation returns
+        *stubs* unchanged (no detail pages to fetch).
+        """
+        return stubs
 
     # ── Single-city pagination loop ────────────────────────────────
 

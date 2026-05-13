@@ -44,7 +44,7 @@ class SearchParameters:
     skip_covered_locations: bool = True
     fetch_details: bool = True
     headless: bool = False
-    max_pages: int = 50
+    max_pages: int = 3
 
     # ── Serialisation helpers ──
 
@@ -170,7 +170,7 @@ class Settings:
         self.excel = ExcelSettings()
         self.outlook = OutlookSettings()
         self.enabled_sites: List[str] = [
-            "realtor.ca", "rentals.ca", #"apartments.com"
+            "realtor.ca", "rentals.ca", "apartments.com"
         ]
         if self.config_path.exists():
             self.load()

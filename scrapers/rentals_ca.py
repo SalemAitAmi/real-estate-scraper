@@ -19,6 +19,7 @@ from selenium.common.exceptions import (
     TimeoutException,
     NoSuchElementException,
     ElementClickInterceptedException,
+    ElementNotInteractableException,
 )
 
 from data.models import (
@@ -31,17 +32,26 @@ from .base_scraper import BaseScraper
 logger = logging.getLogger(__name__)
 
 # ────────────────────────────────────────────────────────────────────
-#  Selectors — every selector is a complete, ready-to-use string.
-#  No templates, no .format() calls.
+#  Selectors
 # ────────────────────────────────────────────────────────────────────
 
 _PANEL = (
-    ".page-search-results__overlay-panels "
-    ".page-panel__content-container > div"
+    "body > div.filters-drawer-backdrop > div "
+    "> div.page-panel.listing-filters-panel "
+    "> div.page-panel__content-container > div"
 )
 
-_BEDS = f"{_PANEL} > div:nth-child(5) > div > div > div"
-_BATHS = f"{_PANEL} > div:nth-child(6) > div > div > div"
+_BEDS = (
+    f"{_PANEL} > div.listing-filters-panel__card-container"
+    ".listing-filters-panel__card-container--pair "
+    "> div:nth-child(1) > div > div"
+)
+
+_BATHS = (
+    f"{_PANEL} > div.listing-filters-panel__card-container"
+    ".listing-filters-panel__card-container--pair "
+    "> div:nth-child(2) > div > div"
+)
 
 SEL = {
     # ── Home page ────────────────────────────────────────────────
@@ -58,34 +68,54 @@ SEL = {
     "panel_close": ".page-panel__title-container button",
 
     # ── Filter panel — price inputs ──────────────────────────────
-    "price_min": f"{_PANEL} > div:nth-child(4) > div > div > div > input:nth-child(1)",
-    "price_max": f"{_PANEL} > div:nth-child(4) > div > div > div > input:nth-child(3)",
+    "price_min": (
+        f"{_PANEL} > div:nth-child(3) > div > div "
+        "> div.number-range.mt-1 > div.number-range__inputs "
+        "> div:nth-child(1) > input"
+    ),
+    "price_max": (
+        f"{_PANEL} > div:nth-child(3) > div > div "
+        "> div.number-range.mt-1 > div.number-range__inputs "
+        "> div:nth-child(3) > input"
+    ),
 
-    # ── Filter panel — individual bedroom options ────────────────
+    # ── Filter panel — bedroom checkboxes ────────────────────────
     #    0 = Studio, 1, 2, 3, 4+
-    "beds_0": f"{_BEDS} > div:nth-child(1) > label",
-    "beds_1": f"{_BEDS} > div:nth-child(2) > label",
-    "beds_2": f"{_BEDS} > div:nth-child(3) > label",
-    "beds_3": f"{_BEDS} > div:nth-child(4) > label",
-    "beds_4": f"{_BEDS} > div:nth-child(5) > label",
+    "beds_0": f"{_BEDS} > div:nth-child(1) > label > input[type=checkbox]",
+    "beds_1": f"{_BEDS} > div:nth-child(2) > label > input[type=checkbox]",
+    "beds_2": f"{_BEDS} > div:nth-child(3) > label > input[type=checkbox]",
+    "beds_3": f"{_BEDS} > div:nth-child(4) > label > input[type=checkbox]",
+    "beds_4": f"{_BEDS} > div:nth-child(5) > label > input[type=checkbox]",
 
-    # ── Filter panel — individual bathroom options ───────────────
-    "baths_0": f"{_BATHS} > div:nth-child(1) > label",
-    "baths_1": f"{_BATHS} > div:nth-child(2) > label",
-    "baths_2": f"{_BATHS} > div:nth-child(3) > label",
-    "baths_3": f"{_BATHS} > div:nth-child(4) > label",
-    "baths_4": f"{_BATHS} > div:nth-child(5) > label",
-
+    # ── Filter panel — bathroom checkboxes ───────────────────────
+    "baths_1": f"{_BATHS} > div:nth-child(1) > label > input[type=checkbox]",
+    "baths_2": f"{_BATHS} > div:nth-child(2) > label > input[type=checkbox]",
+    "baths_3": f"{_BATHS} > div:nth-child(3) > label > input[type=checkbox]",
+    "baths_4": f"{_BATHS} > div:nth-child(4) > label > input[type=checkbox]",
+                 
     # ── Sort dropdown (on the results page, NOT inside filters) ──
-    "sort_select": "p.page-title__sorting select",
+    "sort_select": (
+        "#app > div > div > div.page-search-results__grid "
+        "> div.listings-as-grid > div.header > div "
+        "> div.page-title__bottom-line > p.page-title__sorting "
+        "> div > select"
+    ),
 
     # ── Grid cards (list-view mode) ──────────────────────────────
     "grid_card": "div.listings-as-grid .grid > div",
     "card_link": ".listing-card__details > a",
 
     # ── Pagination ───────────────────────────────────────────────
-    "next_page":      "div.listings-as-grid div.row ul > li:nth-child(4) > a",
-    "next_page_last": "div.listings-as-grid div.row ul > li:last-child > a",
+    "next_page": (
+        "#app > div > div > div.page-search-results__grid "
+        "> div.listings-as-grid > div.row > div > div > div > div "
+        "> ul > li:nth-child(4) > a"
+    ),
+    "next_page_last": (
+        "#app > div > div > div.page-search-results__grid "
+        "> div.listings-as-grid > div.row > div > div > div > div "
+        "> ul > li:last-child > a"
+    ),
 
     # ── Detail page — floor plans ────────────────────────────────
     "plan_price": "li.unit-details__infos--price",
@@ -102,9 +132,12 @@ SEL = {
     "main_image": ".listing-tabbed-media img",
 }
 
-# Ordered lists for the range-click helper
-_BED_KEYS  = ["beds_0", "beds_1", "beds_2", "beds_3", "beds_4"]
-_BATH_KEYS = ["baths_0", "baths_1", "baths_2", "baths_3", "baths_4"]
+_BED_KEY_BY_VALUE: Dict[int, str] = {
+    0: "beds_0", 1: "beds_1", 2: "beds_2", 3: "beds_3", 4: "beds_4",
+}
+_BATH_KEY_BY_VALUE: Dict[int, str] = {
+    1: "baths_1", 2: "baths_2", 3: "baths_3", 4: "baths_4",
+}
 
 
 class RentalsCaScraper(BaseScraper):
@@ -113,6 +146,36 @@ class RentalsCaScraper(BaseScraper):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    # ════════════════════════════════════════════════════════════════
+    #  Detail enrichment (Model A)
+    # ════════════════════════════════════════════════════════════════
+
+    def enrich_listings(self, stubs: List[RentalListing]) -> List[RentalListing]:
+        if not stubs:
+            return stubs
+
+        all_listings: List[RentalListing] = []
+        for i, stub in enumerate(stubs):
+            logger.info(
+                f"  [{i+1}/{len(stubs)}] {stub.metadata.source_url}"
+            )
+            try:
+                plans = self._extract_detail(stub)
+                if plans:
+                    all_listings.extend(plans)
+                    logger.info(f"    → {len(plans)} floor plan(s)")
+                else:
+                    all_listings.append(stub)
+                    logger.info("    → 0 floor plans, keeping stub")
+            except Exception as exc:
+                logger.warning(f"    Detail error: {exc}")
+                all_listings.append(stub)
+            if i < len(stubs) - 1:
+                self.delay((2.5, 5.0))
+
+        logger.info(f"Total listings after detail extraction: {len(all_listings)}")
+        return all_listings
 
     # ════════════════════════════════════════════════════════════════
     #  search_city
@@ -200,16 +263,18 @@ class RentalsCaScraper(BaseScraper):
         # ── Bedrooms ─────────────────────────────────────────────
         if self.min_beds is not None:
             logger.info(f"Setting bedrooms: {self.min_beds}–{self.max_beds}")
-            self._click_option_range(_BED_KEYS, self.min_beds, self.max_beds)
+            self._click_option_range(
+                _BED_KEY_BY_VALUE, self.min_beds, self.max_beds
+            )
 
         time.sleep(0.5)
 
         # ── Bathrooms ────────────────────────────────────────────
-        if self.min_baths is not None:
+        if self.min_baths is not None and int(self.min_baths) >= 1:
             min_b = int(self.min_baths)
             max_b = int(self.max_baths) if self.max_baths is not None else None
             logger.info(f"Setting bathrooms: {min_b}–{max_b}")
-            self._click_option_range(_BATH_KEYS, min_b, max_b)
+            self._click_option_range(_BATH_KEY_BY_VALUE, min_b, max_b)
 
         time.sleep(0.5)
 
@@ -239,48 +304,49 @@ class RentalsCaScraper(BaseScraper):
             time.sleep(0.3)
             logger.info(f"  Filled {value} into filter input")
         except Exception as exc:
-            logger.warning(f"Could not fill filter input ({selector}): {exc}")
+            logger.warning(f"Could not fill filter input ({selector[:60]}…): {exc}")
 
     # ── Bed / bath range clicker ─────────────────────────────────
 
-    @staticmethod
-    def _click_option_range(
-        keys: List[str],
-        min_val: int,
-        max_val: Optional[int],
-    ):
-        """Click every option in [min_val, max_val].
-
-        *keys* is an ordered list of SEL keys:
-        index 0 → value 0, index 1 → value 1, …, index 4 → value 4+.
-        """
-        # Nothing to do — was intentionally left untyped in
-        # the static signature because self isn't needed; the
-        # Selenium interaction happens inside the helper below.
-        pass
-
-    # Override as instance method so we have access to self.driver:
     def _click_option_range(
         self,
-        keys: List[str],
+        key_map: Dict[int, str],
         min_val: int,
         max_val: Optional[int],
     ):
-        upper = min_val if max_val is None else max_val
-        # If no upper bound specified, click through to 4+
-        if max_val is None:
-            upper = 4
+        """Click every checkbox for values in ``[min_val, max_val]``.
+
+        ``key_map`` is ``{value: SEL_key}`` — e.g. ``{0: "beds_0", …}``.
+
+        • If ``max_val`` is ``None``, iterate up to the highest key
+        (i.e. the "+" option).
+        • Values outside the key_map range are skipped on the low end
+        and clamped to the max on the high end.
+        """
+        if not key_map:
+            return
+        min_key = min(key_map.keys())
+        max_key = max(key_map.keys())
+
+        upper = max_val if max_val is not None else max_key
 
         for v in range(min_val, upper + 1):
-            idx = min(v, 4)
-            sel = SEL[keys[idx]]
+            if v < min_key:
+                continue
+            v_clamped = min(v, max_key)
+            sel = SEL[key_map[v_clamped]]
             try:
-                lbl = self.driver.find_element(By.CSS_SELECTOR, sel)
-                self._safe_click(lbl)
+                cb = self.driver.find_element(By.CSS_SELECTOR, sel)
+                if cb.is_selected():
+                    logger.info(f"  {key_map[v_clamped]} already checked — skipping")
+                    continue
+                # Checkbox is visually hidden behind a styled <label>;
+                # use JS click so visibility doesn't matter.
+                self.driver.execute_script("arguments[0].click();", cb)
                 time.sleep(0.3)
-                logger.info(f"  Clicked {keys[idx]}")
+                logger.info(f"  Clicked {key_map[v_clamped]}")
             except Exception as exc:
-                logger.warning(f"  Click FAILED for {keys[idx]}: {exc}")
+                logger.warning(f"  Click FAILED for {key_map[v_clamped]}: {exc}")
 
     # ── Sort ─────────────────────────────────────────────────────
 
@@ -440,42 +506,8 @@ class RentalsCaScraper(BaseScraper):
         return self._has_listings()
 
     # ════════════════════════════════════════════════════════════════
-    #  _post_scrape — visit detail pages, extract floor plans
+    #  Detail-page extraction (called by enrich_listings)
     # ════════════════════════════════════════════════════════════════
-
-    def _post_scrape(self, stubs: List[RentalListing]) -> List[RentalListing]:
-        if not self.fetch_details or not stubs:
-            return stubs
-
-        logger.info(
-            f"\n{'='*60}\n"
-            f"EXTRACTING FLOOR PLANS FROM {len(stubs)} DETAIL PAGES\n"
-            f"{'='*60}"
-        )
-
-        all_listings: List[RentalListing] = []
-        for i, stub in enumerate(stubs):
-            logger.info(
-                f"  [{i+1}/{len(stubs)}] {stub.metadata.source_url}"
-            )
-            try:
-                plans = self._extract_detail(stub)
-                if plans:
-                    all_listings.extend(plans)
-                    logger.info(f"    → {len(plans)} floor plan(s)")
-                else:
-                    all_listings.append(stub)
-                    logger.info("    → 0 floor plans, keeping stub")
-            except Exception as exc:
-                logger.warning(f"    Detail error: {exc}")
-                all_listings.append(stub)
-            if i < len(stubs) - 1:
-                self.delay((2.5, 5.0))
-
-        logger.info(f"Total listings after detail extraction: {len(all_listings)}")
-        return all_listings
-
-    # ── Detail-page extraction ───────────────────────────────────
 
     def _extract_detail(self, stub: RentalListing) -> List[RentalListing]:
         url = stub.metadata.source_url
@@ -491,8 +523,6 @@ class RentalsCaScraper(BaseScraper):
         utilities = self._extract_utilities(soup)
         main_imgs = self._extract_main_images(soup)
 
-        # Iterate floor-plan groups: #floor-plan-group0, …1, …2, …
-        # Bedroom text lives in the sidebar at nth-child(idx + 3).
         listings: List[RentalListing] = []
         idx = 0
         while True:
@@ -631,8 +661,6 @@ class RentalsCaScraper(BaseScraper):
                 imgs.append(src)
         return imgs[:10]
 
-    # ── Fallback single-listing builder ──────────────────────────
-
     def _fallback_listing(
         self, soup, url, stub, address, parking, utilities, images,
     ) -> Optional[RentalListing]:
@@ -660,8 +688,6 @@ class RentalsCaScraper(BaseScraper):
             ),
             title=address.full_address,
         )
-
-    # ── Scrolling helpers ────────────────────────────────────────
 
     def _scroll_detail(self):
         try:

@@ -65,7 +65,6 @@ class RealtorCaScraper(BaseScraper):
         'card_icon_strip': '.listingCardIconStrip',
         'card_icon_num': '.listingCardIconNum',
         'card_image': '.listingCardImageCon img',
-        'card_fresh_tag': '.listingCardTagCon .listingCardTagLabel',
         'detail': {
             'price_change': (
                 '#listingDetailsTopInnerCon > div.leftTableCell '
@@ -149,17 +148,12 @@ class RealtorCaScraper(BaseScraper):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-    # ── Post-scrape detail enrichment ────────────────────────────
+    # ── Detail enrichment (Model A) ──────────────────────────────
 
-    def _post_scrape(self, listings):
-        if self.fetch_details and listings:
-            logger.info(
-                f"\n{'='*60}\n"
-                f"FETCHING DETAILS FOR {len(listings)} LISTINGS\n"
-                f"{'='*60}"
-            )
-            return self._enrich_listings_with_details(listings)
-        return listings
+    def enrich_listings(self, listings):
+        if not listings:
+            return listings
+        return self._enrich_listings_with_details(listings)
 
     def _enrich_listings_with_details(self, listings):
         enriched = []
@@ -513,6 +507,12 @@ class RealtorCaScraper(BaseScraper):
             return False
 
     def get_listings_from_page(self):
+        """Parse every card on the current page.
+
+        Each run is independent — there is no freshness check.  All cards
+        are collected and pagination continues until ``max_pages`` is
+        reached or no more pages exist.
+        """
         listings = []
         self._scroll_through_results()
         self.short_delay()
@@ -525,35 +525,38 @@ class RealtorCaScraper(BaseScraper):
         wrappers = container.select(':scope > div.cardCon')
         logger.info(f"Found {len(wrappers)} card wrappers")
 
-        # FIX 1: Parse ALL cards on the page.  The fresh-tag is used
-        # only to decide whether to continue paginating, never to skip
-        # individual cards.  The old code did `break` on the first
-        # non-fresh card, which discarded the rest of the page.
-        encountered_old = False
-
         for i, wrapper in enumerate(wrappers):
             card = wrapper.select_one(':scope > div')
             if not card:
-                continue
-
-            is_fresh = card.select_one(self.SELECTORS['card_fresh_tag']) is not None
-            if not is_fresh:
-                encountered_old = True
-                # Do NOT break — keep parsing remaining cards
+                # Some wrappers (ads, promoted slots) lack the inner
+                # <div>.  Fall back to treating the wrapper itself as
+                # the card so the link/address selectors still run.
+                logger.debug(
+                    f"Card {i+1}/{len(wrappers)}: no child <div>, "
+                    f"using wrapper (classes={wrapper.get('class', [])})"
+                )
+                card = wrapper
 
             try:
                 listing = self._parse_listing_card(card)
-                if listing and listing.id not in self._seen_ids:
-                    self._seen_ids.add(listing.id)
-                    listings.append(listing)
-                    if listing.address.city:
-                        self._seen_cities.add(listing.address.city)
+                if listing is None:
+                    logger.debug(
+                        f"Card {i+1}/{len(wrappers)}: "
+                        f"parse returned None (no link or address)"
+                    )
+                    continue
+                if listing.id in self._seen_ids:
+                    logger.debug(
+                        f"Card {i+1}/{len(wrappers)}: duplicate ID "
+                        f"({listing.address.full_address[:40]})"
+                    )
+                    continue
+                self._seen_ids.add(listing.id)
+                listings.append(listing)
+                if listing.address.city:
+                    self._seen_cities.add(listing.address.city)
             except Exception as exc:
-                logger.debug(f"Card {i+1} parse error: {exc}")
-
-        if encountered_old:
-            self._stop_pagination = True
-            logger.info("Non-fresh card(s) detected — will stop after this page")
+                logger.debug(f"Card {i+1}/{len(wrappers)} parse error: {exc}")
 
         logger.info(f"Extracted {len(listings)} listings from page")
         return listings
@@ -584,9 +587,13 @@ class RealtorCaScraper(BaseScraper):
             pass
 
     def _parse_listing_card(self, card):
+        # ── Find the detail link ─────────────────────────────────
         link_el = card.select_one(self.SELECTORS['card_link'])
         if not link_el:
             link_el = card.select_one('a[href*="/real-estate/"]')
+        if not link_el:
+            # Broadest fallback — any anchor with an href
+            link_el = card.select_one('a[href]')
         href = link_el.get('href', '') if link_el else ''
         if not href:
             return None
@@ -599,6 +606,9 @@ class RealtorCaScraper(BaseScraper):
 
         addr_el = card.select_one(self.SELECTORS['card_address'])
         addr_text = addr_el.get_text(' ', strip=True) if addr_el else ''
+        if not addr_text:
+            # Try the link text as a last resort
+            addr_text = link_el.get_text(' ', strip=True) if link_el else ''
         if not addr_text:
             return None
 
@@ -624,9 +634,6 @@ class RealtorCaScraper(BaseScraper):
             country='Canada',
         )
 
-        # FIX 2: Hash against the full URL so that different units at the
-        # same street address (same source_id, same card-level address text)
-        # always produce distinct IDs.
         lid = RentalListing.generate_id(self.SITE_NAME, source_id, url)
 
         return RentalListing(

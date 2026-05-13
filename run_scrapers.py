@@ -1,6 +1,11 @@
 """
-Orchestrator — runs enabled scrapers, normalises, deduplicates,
-merges into the persistent store, and prints a summary.
+Orchestrator — runs enabled scrapers in two phases:
+
+1. **Stub collection** — paginate through search results.
+2. **Detail enrichment** — visit each stub's detail page (optional).
+
+Then normalises, deduplicates, merges into the persistent store,
+and prints a summary.
 """
 
 import json
@@ -13,7 +18,12 @@ from config.settings import get_settings, SearchParameters
 from data.models import RentalListing
 from data.normalizer import normalize_listing, deduplicate_listings
 from data.store import ListingStore
-from scrapers import RealtorCaScraper, RentalsCaScraper
+from scrapers import (
+    RealtorCaScraper,
+    RentalsCaScraper,
+    ApartmentsComScraper,
+    DetailEnricher,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,8 +34,9 @@ logger = logging.getLogger(__name__)
 # ── Scraper registry ──────────────────────────────────────────────
 
 SCRAPER_MAP = {
-    #"realtor.ca":  RealtorCaScraper,
-    "rentals.ca":  RentalsCaScraper,
+    #"realtor.ca":     RealtorCaScraper,
+    "rentals.ca":     RentalsCaScraper,
+    #"apartments.com": ApartmentsComScraper,
 }
 
 
@@ -43,13 +54,14 @@ def run_scraper(
     scraper = cls(
         headless=params.headless,
         skip_covered_locations=params.skip_covered_locations,
-        fetch_details=params.fetch_details,
         max_price=params.max_price,
         min_price=params.min_price,
         min_beds=params.min_bedrooms,
         max_beds=params.max_bedrooms,
         min_baths=params.min_bathrooms,
         max_baths=params.max_bathrooms,
+        min_sqft=params.min_sqft,
+        max_sqft=params.max_sqft,
     )
 
     all_listings: List[RentalListing] = []
@@ -65,22 +77,32 @@ def run_scraper(
         )
         logger.info(f"  Beds      : {params.min_bedrooms} – {params.max_bedrooms or '+'}")
         logger.info(f"  Baths     : {params.min_bathrooms} – {params.max_bathrooms or '+'}")
+        logger.info(f"  Sq.Ft.    : {params.min_sqft or 'any'} – {params.max_sqft or 'any'}")
         logger.info(f"  Details   : {params.fetch_details}")
         logger.info(f"  Skip cov. : {params.skip_covered_locations}")
 
+        # ── Phase 1: stub collection ─────────────────────────────
         try:
-            all_listings = scraper.scrape_locations(
+            stubs = scraper.scrape_locations(
                 params.locations, max_pages=params.max_pages
             )
         except Exception as exc:
             logger.error(f"Scraper error ({site}): {exc}")
             scraper.stats.errors.append(str(exc))
+            stubs = []
 
         logger.info(
-            f"\n{site} — {len(all_listings)} listings, "
+            f"\n{site} — {len(stubs)} stubs, "
             f"{scraper.stats.pages_scraped} pages, "
             f"cities: {sorted(scraper._seen_cities)}"
         )
+
+        # ── Phase 2: detail enrichment ───────────────────────────
+        if params.fetch_details and stubs:
+            enricher = DetailEnricher(scraper)
+            all_listings = enricher.enrich(stubs)
+        else:
+            all_listings = stubs
 
     return all_listings
 
