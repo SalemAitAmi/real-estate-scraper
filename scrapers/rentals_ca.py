@@ -107,15 +107,10 @@ SEL = {
 
     # ── Pagination ───────────────────────────────────────────────
     "next_page": (
-        "#app > div > div > div.page-search-results__grid "
-        "> div.listings-as-grid > div.row > div > div > div > div "
-        "> ul > li:nth-child(4) > a"
-    ),
-    "next_page_last": (
-        "#app > div > div > div.page-search-results__grid "
-        "> div.listings-as-grid > div.row > div > div > div > div "
-        "> ul > li:last-child > a"
-    ),
+    "#app > div > div > div.page-search-results__grid "
+    "> div.listings-as-grid > div.row > div > div > div > div "
+    "> ul > li:last-child > a"
+),
 
     # ── Detail page — floor plans ────────────────────────────────
     "plan_price": "li.unit-details__infos--price",
@@ -314,15 +309,6 @@ class RentalsCaScraper(BaseScraper):
         min_val: int,
         max_val: Optional[int],
     ):
-        """Click every checkbox for values in ``[min_val, max_val]``.
-
-        ``key_map`` is ``{value: SEL_key}`` — e.g. ``{0: "beds_0", …}``.
-
-        • If ``max_val`` is ``None``, iterate up to the highest key
-        (i.e. the "+" option).
-        • Values outside the key_map range are skipped on the low end
-        and clamped to the max on the high end.
-        """
         if not key_map:
             return
         min_key = min(key_map.keys())
@@ -340,8 +326,6 @@ class RentalsCaScraper(BaseScraper):
                 if cb.is_selected():
                     logger.info(f"  {key_map[v_clamped]} already checked — skipping")
                     continue
-                # Checkbox is visually hidden behind a styled <label>;
-                # use JS click so visibility doesn't matter.
                 self.driver.execute_script("arguments[0].click();", cb)
                 time.sleep(0.3)
                 logger.info(f"  Clicked {key_map[v_clamped]}")
@@ -377,6 +361,10 @@ class RentalsCaScraper(BaseScraper):
         except TimeoutException:
             return False
 
+    # FIX: removed _seen_ids gate so every card on every page is
+    #      returned as a stub.  Cross-page duplicates (featured /
+    #      promoted cards that repeat) are handled later by the
+    #      pipeline's deduplicate_listings() pass.
     def get_listings_from_page(self) -> List[RentalListing]:
         self._scroll_grid()
         self.short_delay()
@@ -389,8 +377,7 @@ class RentalsCaScraper(BaseScraper):
         for i, card in enumerate(cards):
             try:
                 stub = self._stub_from_card(card)
-                if stub and stub.id not in self._seen_ids:
-                    self._seen_ids.add(stub.id)
+                if stub:
                     stubs.append(stub)
                     city = self._city_from_href(stub.metadata.source_url)
                     if city:
@@ -461,28 +448,19 @@ class RentalsCaScraper(BaseScraper):
     # ════════════════════════════════════════════════════════════════
 
     def go_to_next_page(self) -> bool:
-        for sel in [SEL["next_page"], SEL["next_page_last"]]:
-            btn = self.find_element_safe(By.CSS_SELECTOR, sel)
+        try:
+            btn = self.find_element_safe(By.CSS_SELECTOR, SEL["next_page"])
             if not btn or not btn.is_displayed():
-                continue
-            text = btn.text.strip().lower()
-            if text in ("prev", "previous", "\u2039", "\u00ab", "<"):
-                continue
-            cls = (btn.get_attribute("class") or "").lower()
-            if "disabled" in cls:
-                continue
-            try:
-                self.driver.execute_script(
-                    "arguments[0].scrollIntoView({block:'center'});", btn
-                )
-                self.short_delay()
-                self._safe_click(btn)
-                self.delay(self.PAGE_LOAD_DELAY)
-                return self._has_listings()
-            except Exception:
-                continue
-
-        return self._paginate_via_url()
+                return self._paginate_via_url()
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView({block:'center'});", btn
+            )
+            self.short_delay()
+            self._safe_click(btn)
+            self.delay(self.PAGE_LOAD_DELAY)
+            return self._has_listings()
+        except Exception:
+            return self._paginate_via_url()
 
     def _paginate_via_url(self) -> bool:
         parsed = urlparse(self.driver.current_url)

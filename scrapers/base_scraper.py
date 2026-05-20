@@ -120,6 +120,12 @@ class BaseScraper(ABC):
                 self.driver.quit()
             except Exception:
                 pass
+            # Prevent uc.Chrome.__del__ from re-running quit() at
+            # interpreter shutdown (raises WinError 6 on Windows).
+            try:
+                self.driver.quit = lambda *a, **kw: None
+            except Exception:
+                pass
             self.driver = None
         logger.info(f"Stopped {self.SITE_NAME} scraper")
 

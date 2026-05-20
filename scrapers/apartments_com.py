@@ -59,7 +59,7 @@ class ApartmentsComScraper(BaseScraper):
 
     SELECTORS = {
         # ── Homepage search (smart search — NO child <input>) ────
-        "search_input": "#homepage-smart-search > div.smart-search-glow-container > div > div.smart-search-input.grow[contenteditable]",
+        "search_input": ".smart-search-input[contenteditable]",
         
         "search_submit": (
             "#homepage-smart-search "
@@ -273,26 +273,31 @@ class ApartmentsComScraper(BaseScraper):
 
             query = f"{city_name}, QC, Canada"
 
-            # ── Locate the smart-search container ────────────────
-            container = self.SELECTORS["search_input"]
-            if not container:
-                logger.error("apartments.com: search container not found")
+            try:
+                container = self.wait_for_element(
+                    By.CSS_SELECTOR,
+                    self.SELECTORS["search_input"],
+                    timeout=10,
+                )
+            except TimeoutException:
+                logger.error("apartments.com: search input not found")
                 return False
 
-            # ── Type into it ─────────────────────────────────────
-            if not self._type_into_smart_search(container, query):
-                logger.error("apartments.com: could not type search query")
-                return False
+            ActionChains(self.driver) \
+                .move_to_element(container) \
+                .click() \
+                .perform()
+            time.sleep(0.8)
+
+            for ch in query:
+                ActionChains(self.driver).send_keys(ch).perform()
+                time.sleep(random.uniform(0.06, 0.12))
 
             time.sleep(1.5)
-
-            # ── Submit ───────────────────────────────────────────
-            self._submit_smart_search(container)
+            self._submit_smart_search()
 
             self.delay(self.PAGE_LOAD_DELAY)
             self._dismiss_popups()
-
-            # ── Filters on results page ──────────────────────────
             self._apply_filters()
             self.medium_delay()
 
@@ -301,119 +306,6 @@ class ApartmentsComScraper(BaseScraper):
             logger.error(f"apartments.com search_city failed: {exc}")
             import traceback; traceback.print_exc()
             return False
-
-    # ── Smart-search typing strategies ───────────────────────────
-
-    def _type_into_smart_search(self, container, query: str) -> bool:
-        """Try several interaction models until text appears.
-
-        The smart search is a React component rendered as a plain
-        ``<div>`` — no ``<input>`` is exposed.  Keyboard events
-        must reach the component through the browser's native event
-        pipeline, which rules out value-setting hacks.
-        """
-
-        strategies = [
-            ("move + click, then individual ActionChains per char",
-             self._ss_strat_individual_actions),
-            ("click container element, then element.send_keys()",
-             self._ss_strat_element_send_keys),
-            ("click, then active-element send_keys()",
-             self._ss_strat_active_element),
-            ("JS focus + click, then individual ActionChains",
-             self._ss_strat_js_focus_actions),
-        ]
-
-        for name, fn in strategies:
-            logger.info(f"Smart search strategy: {name}")
-            self._clear_smart_search(container)
-
-            try:
-                fn(container, query)
-            except Exception as exc:
-                logger.debug(f"  Strategy raised: {exc}")
-                continue
-
-            if self._verify_search_text(container, query):
-                logger.info(f"  ✓ text verified")
-                return True
-            logger.info(f"  ✗ text not detected")
-
-        logger.error("All smart search strategies failed")
-        return False
-
-    # ---- strategy implementations ----
-
-    def _ss_strat_individual_actions(self, container, query):
-        """Click with ActionChains, then send one key per perform()."""
-        ActionChains(self.driver) \
-            .move_to_element(container) \
-            .click() \
-            .perform()
-        time.sleep(0.8)
-
-        for ch in query:
-            ActionChains(self.driver).send_keys(ch).perform()
-            time.sleep(random.uniform(0.06, 0.12))
-
-    def _ss_strat_element_send_keys(self, container, query):
-        """Native click on the container, then container.send_keys()."""
-        ActionChains(self.driver) \
-            .move_to_element(container) \
-            .click() \
-            .perform()
-        time.sleep(0.8)
-
-        for ch in query:
-            container.send_keys(ch)
-            time.sleep(random.uniform(0.06, 0.12))
-
-    def _ss_strat_active_element(self, container, query):
-        """Click the container, read whatever the browser focused,
-        and type into that."""
-        ActionChains(self.driver) \
-            .move_to_element(container) \
-            .click() \
-            .perform()
-        time.sleep(0.8)
-
-        active = self.driver.switch_to.active_element
-        logger.debug(f"  active element tag: {active.tag_name}")
-        for ch in query:
-            active.send_keys(ch)
-            time.sleep(random.uniform(0.06, 0.12))
-
-    def _ss_strat_js_focus_actions(self, container, query):
-        """Use JavaScript to focus + click the element, then type
-        via ActionChains so keystrokes are native (trusted)."""
-        self.driver.execute_script("""
-            var el = arguments[0];
-            el.dispatchEvent(new MouseEvent('mousedown', {bubbles:true}));
-            el.dispatchEvent(new MouseEvent('mouseup',   {bubbles:true}));
-            el.dispatchEvent(new MouseEvent('click',     {bubbles:true}));
-            el.focus();
-        """, container)
-        time.sleep(0.8)
-
-        for ch in query:
-            ActionChains(self.driver).send_keys(ch).perform()
-            time.sleep(random.uniform(0.06, 0.12))
-
-    # ---- helpers ----
-
-    def _clear_smart_search(self, container):
-        """Select-all + delete inside the smart search."""
-        try:
-            ActionChains(self.driver) \
-                .move_to_element(container) \
-                .click() \
-                .pause(0.3) \
-                .key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL) \
-                .send_keys(Keys.BACKSPACE) \
-                .perform()
-            time.sleep(0.3)
-        except Exception:
-            pass
 
     def _verify_search_text(self, container, query: str) -> bool:
         """Return True if the query appears in the search component."""
@@ -454,10 +346,7 @@ class ApartmentsComScraper(BaseScraper):
 
         return False
 
-    def _submit_smart_search(self, container):
-        """Click the first visible autocomplete suggestion, or fall
-        back to the search button / Enter."""
-        # Try autocomplete suggestions first
+    def _submit_smart_search(self):
         for sel in (
             "[class*='suggestion'] li",
             "[class*='autocomplete'] li",
@@ -475,7 +364,6 @@ class ApartmentsComScraper(BaseScraper):
             except Exception:
                 continue
 
-        # Fall back to the search button
         submit = self._find_first(self.SELECTORS["search_submit"])
         if submit:
             self._safe_click(submit)
@@ -678,8 +566,7 @@ class ApartmentsComScraper(BaseScraper):
         for i, card in enumerate(cards):
             try:
                 listing = self._parse_card(card)
-                if listing and listing.id not in self._seen_ids:
-                    self._seen_ids.add(listing.id)
+                if listing:
                     listings.append(listing)
                     if listing.address.city:
                         self._seen_cities.add(listing.address.city)

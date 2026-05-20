@@ -13,6 +13,7 @@ import logging
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List
+import sys
 
 from config.settings import get_settings, SearchParameters
 from data.models import RentalListing
@@ -34,9 +35,9 @@ logger = logging.getLogger(__name__)
 # ── Scraper registry ──────────────────────────────────────────────
 
 SCRAPER_MAP = {
-    #"realtor.ca":     RealtorCaScraper,
+    "realtor.ca":     RealtorCaScraper,
     "rentals.ca":     RentalsCaScraper,
-    #"apartments.com": ApartmentsComScraper,
+    "apartments.com": ApartmentsComScraper,
 }
 
 
@@ -129,20 +130,32 @@ def pipeline(
     return store
 
 
-# ── Snapshot helper ──────────────────────────────────────────────
+# ── Scraper-dump writer ──────────────────────────────────────────
 
-def save_snapshot(store: ListingStore, output_dir: Path):
+def save_scraper_dump(
+    raw_by_domain: Dict[str, List[RentalListing]],
+    output_dir: Path,
+) -> Path:
+    """Dump the raw output of every scraper to scraper-dump.json.
+
+    The pipeline (store.json) is updated separately from this file —
+    scraper-dump.json is the single source of truth for "what came
+    back from this run", before normalisation / dedup / merge.
+    """
     output_dir.mkdir(parents=True, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    data = [l.to_dict() for l in store.listings.values()]
+    path = output_dir / "scraper-dump.json"
 
-    for path in (
-        output_dir / f"listings_{ts}.json",
-        output_dir / "latest_listings.json",
-    ):
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        logger.info(f"Saved {len(data)} listings → {path}")
+    payload = {
+        domain: [l.to_dict() for l in listings]
+        for domain, listings in raw_by_domain.items()
+    }
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+    logger.info(
+        f"Wrote scraper-dump.json: "
+        f"{sum(len(v) for v in payload.values())} listings → {path}"
+    )
+    return path
 
 
 def print_summary(store: ListingStore):
@@ -190,15 +203,22 @@ def main():
     store = ListingStore()
 
     raw_by_domain: Dict[str, List[RentalListing]] = {}
-    for site in settings.enabled_sites:
-        raw_by_domain[site] = run_scraper(site, params)
+    try:
+        for site in settings.enabled_sites:
+            raw_by_domain[site] = run_scraper(site, params)
+    except KeyboardInterrupt:
+        logger.warning("Interrupted by user — saving what we have …")
 
+    save_scraper_dump(raw_by_domain, Path("./data"))
     pipeline(raw_by_domain, store)
-    save_snapshot(store, Path("./data"))
     print_summary(store)
 
     logger.info("Done!")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        logger.warning("Interrupted by user")
+        sys.exit(0)

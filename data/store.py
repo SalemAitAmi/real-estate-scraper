@@ -59,10 +59,17 @@ class ListingStore:
         if not self.store_path.exists():
             return
         try:
+            from .normalizer import normalize_listing   # local import: avoid cycle
             with open(self.store_path, "r", encoding="utf-8") as fh:
                 data = json.load(fh)
             for item in data:
                 listing = RentalListing.from_dict(item)
+                # Normalise every loaded listing so derived fields
+                # (adjusted_rent, canonical city/province, etc.) match
+                # what an incoming scrape will produce.  Without this,
+                # an identical re-scrape generates phantom "updates"
+                # purely from None → computed-default deltas.
+                normalize_listing(listing)
                 self.listings[listing.id] = listing
             logger.info(f"Loaded {len(self.listings)} listings from store")
         except Exception as exc:
@@ -82,6 +89,11 @@ class ListingStore:
         for new in new_listings:
             existing = self.listings.get(new.id)
             if existing is None:
+                # Quality gate also applies to first-time inserts —
+                # otherwise garbage stubs pollute the store forever.
+                if self._quality_score(new) < 3:
+                    report.skipped_quality += 1
+                    continue
                 self.listings[new.id] = new
                 report.added += 1
             else:

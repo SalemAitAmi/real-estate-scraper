@@ -44,7 +44,7 @@ class SearchParameters:
     skip_covered_locations: bool = True
     fetch_details: bool = True
     headless: bool = False
-    max_pages: int = 3
+    max_pages: int = 1
 
     # ── Serialisation helpers ──
 

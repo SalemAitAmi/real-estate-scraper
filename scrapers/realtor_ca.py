@@ -545,13 +545,6 @@ class RealtorCaScraper(BaseScraper):
                         f"parse returned None (no link or address)"
                     )
                     continue
-                if listing.id in self._seen_ids:
-                    logger.debug(
-                        f"Card {i+1}/{len(wrappers)}: duplicate ID "
-                        f"({listing.address.full_address[:40]})"
-                    )
-                    continue
-                self._seen_ids.add(listing.id)
                 listings.append(listing)
                 if listing.address.city:
                     self._seen_cities.add(listing.address.city)
