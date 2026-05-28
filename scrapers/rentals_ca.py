@@ -25,7 +25,7 @@ from selenium.common.exceptions import (
 from data.models import (
     Address, Amenities, ListingMetadata, PriceInfo,
     PropertyFeatures, PropertyType, ParkingType,
-    LaundryType, RentalListing,
+    LaundryType, RentalListing, RentValue,
 )
 from .base_scraper import BaseScraper
 
@@ -415,7 +415,7 @@ class RentalsCaScraper(BaseScraper):
                 province="QC",
                 country="Canada",
             ),
-            price=PriceInfo(base_rent=0),
+            price=PriceInfo(base_rent=RentValue(amount=0)),
             features=PropertyFeatures(),
             amenities=Amenities(),
             metadata=ListingMetadata(
@@ -530,7 +530,7 @@ class RentalsCaScraper(BaseScraper):
                 id=lid,
                 address=copy.deepcopy(address),
                 price=PriceInfo(
-                    base_rent=price or 0,
+                    base_rent=RentValue(amount=price or 0),
                     currency="CAD",
                     heating_included=utilities.get("heating", False),
                     water_included=utilities.get("water", False),
@@ -649,7 +649,7 @@ class RentalsCaScraper(BaseScraper):
             id=lid,
             address=copy.deepcopy(address),
             price=PriceInfo(
-                base_rent=0,
+                base_rent=RentValue(amount=0),
                 heating_included=utilities.get("heating", False),
                 water_included=utilities.get("water", False),
             ),

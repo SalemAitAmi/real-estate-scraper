@@ -203,6 +203,17 @@ _settings: Optional[Settings] = None
 
 
 def get_settings() -> Settings:
+    """Return the singleton Settings instance.
+
+    NOTE: The instance is cached at module level for the lifetime of the
+    process.  If you ever add a UI affordance to reload from disk
+    (e.g. a "Reload Config" button), reset the cache first so the next
+    call re-reads ``settings.json``:
+
+        import config.settings as cs
+        cs._settings = None
+        cs.get_settings()
+    """
     global _settings
     if _settings is None:
         _settings = Settings()

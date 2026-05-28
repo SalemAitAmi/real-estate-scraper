@@ -1,4 +1,4 @@
-from .models import RentalListing, BuildingListing
+from .models import RentalListing, BuildingListing, RentValue
 from .store import ListingStore
 from .normalizer import normalize_listing, deduplicate_listings
 
@@ -8,4 +8,5 @@ __all__ = [
     "ListingStore",
     "normalize_listing",
     "deduplicate_listings",
+    "RentValue",
 ]

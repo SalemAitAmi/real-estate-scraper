@@ -79,10 +79,36 @@ class Address:
 
 
 @dataclass
+class RentValue:
+    """Monthly rent — either a single value or a min/max range.
+
+    ``amount`` is the effective/primary number used for filtering,
+    sorting, and quality checks.  ``min_amount`` and ``max_amount``
+    are populated only when the listing advertises a range (common
+    for apartments.com floor plans with multiple vacant units).
+    """
+    amount: float
+    min_amount: Optional[float] = None
+    max_amount: Optional[float] = None
+
+    @property
+    def is_range(self) -> bool:
+        return (
+            self.min_amount is not None
+            and self.max_amount is not None
+            and self.min_amount != self.max_amount
+        )
+
+    def display(self) -> str:
+        if self.is_range:
+            return f"${self.min_amount:,.0f} – ${self.max_amount:,.0f}"
+        return f"${self.amount:,.0f}" if self.amount else ""
+
+
+@dataclass
 class PriceInfo:
-    base_rent: float
+    base_rent: RentValue
     currency: str = "CAD"
-    adjusted_rent: Optional[float] = None
     heating_included: bool = False
     electricity_included: bool = False
     water_included: bool = False
@@ -92,15 +118,6 @@ class PriceInfo:
     pet_fee: Optional[float] = None
     security_deposit: Optional[float] = None
     first_last_required: bool = False
-
-    def calculate_adjusted_rent(self) -> float:
-        total = self.base_rent
-        if self.parking_fee:
-            total += self.parking_fee
-        if self.storage_fee:
-            total += self.storage_fee
-        return total
-
 
 @dataclass
 class PropertyFeatures:
@@ -264,8 +281,11 @@ class RentalListing:
             "Title": self.title,
             "Address": str(self.address),
             "City": self.address.city,
-            "Price": self.price.base_rent,
-            "Adj. Rent": self.price.adjusted_rent or self.price.base_rent,
+            "Price": (
+                self.price.base_rent.display()
+                if self.price.base_rent.is_range
+                else self.price.base_rent.amount
+            ),
             "Beds": self.features.bedrooms,
             "Baths": self.features.bathrooms,
             "Sq.Ft.": self.features.get_sqft(),
@@ -299,7 +319,9 @@ class RentalListing:
         address = Address(**data["address"])
 
         # --- Price ---
-        price = PriceInfo(**data["price"])
+        pd = data["price"].copy()
+        pd["base_rent"] = RentValue(**pd["base_rent"])
+        price = PriceInfo(**pd)
 
         # --- Features (with enum reconstruction) ---
         fd = data["features"].copy()

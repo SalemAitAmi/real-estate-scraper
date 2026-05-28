@@ -15,6 +15,7 @@ import re
 import time
 from typing import Dict, List, Optional, Any
 from datetime import datetime
+import copy
 
 from bs4 import BeautifulSoup, Tag
 from selenium.webdriver.common.action_chains import ActionChains
@@ -31,7 +32,7 @@ from selenium.common.exceptions import (
 from data.models import (
     Address, Amenities, ListingMetadata, PriceInfo,
     PropertyFeatures, PropertyType, HeatingType, ParkingType,
-    LaundryType, RentalListing,
+    LaundryType, RentalListing, RentValue,
 )
 from .base_scraper import BaseScraper
 
@@ -48,6 +49,32 @@ _SQFT_VALUES: List[int] = [
 ]
 _SQFT_INDEX: Dict[int, int] = {v: i + 2 for i, v in enumerate(_SQFT_VALUES)}
 
+_FP_VACANCY_CONTAINER = "#pricingView > div.tab-section.active"
+_FP_VACANCY_ROW = f"{_FP_VACANCY_CONTAINER} > div"
+_FP_DETAILS_BTN_TPL = (
+    f"{_FP_VACANCY_CONTAINER} > div:nth-child({{n}}) > div > div "
+    "> div.column2 > div > div.actionLinksContainer "
+    "> button.actionLinks.js-viewModelDetails-modal"
+)
+_FP_MODAL_ROOT = "#rentalDetailModalContentContainer"
+_FP_CLOSE_BTN = "#closeRentalDetailButton"
+_FP_RENT = (
+    f"{_FP_MODAL_ROOT} > div > div.left-unit-detail-container.amenities "
+    "> div.one-col > div > div.specs-header.no-wrap.pricing"
+)
+_FP_SPECS_LI_TPL = (
+    f"{_FP_MODAL_ROOT} > div > div.left-unit-detail-container.amenities "
+    "> div.one-col > div > div:nth-child(3) > ul > li:nth-child({n})"
+)
+_FP_ACTIVE_IMG = "#activeMedia"
+_FP_NEXT_IMG = (
+    "#rentalDetailCarouselSection > div.navigationControl "
+    "> button.rightNav.js-rentalModalMediaRightNav"
+)
+_FP_AMENITY_UL = (
+    f"{_FP_MODAL_ROOT} > div > div.left-unit-detail-container.amenities "
+    "> div.amenities > ul"
+)
 
 class ApartmentsComScraper(BaseScraper):
     SITE_NAME = "apartments.com"
@@ -189,77 +216,218 @@ class ApartmentsComScraper(BaseScraper):
 
     # ── Detail enrichment (Model A) ──────────────────────────────
 
-    def enrich_listings(self, listings):
-        if not listings:
-            return listings
-        return self._enrich_all(listings)
-
-    def _enrich_all(self, listings):
-        enriched = []
-        for i, listing in enumerate(listings):
-            logger.info(
-                f"  [{i+1}/{len(listings)}] {listing.address.full_address[:50]}…"
-            )
+    def enrich_listings(self, stubs):
+        """Expand each property stub into one listing per floor-plan vacancy."""
+        if not stubs:
+            return stubs
+        out = []
+        for i, stub in enumerate(stubs):
+            logger.info(f"  [{i+1}/{len(stubs)}] {stub.metadata.source_url}")
             try:
-                enriched.append(self._fetch_detail(listing))
+                plans = self._extract_property_detail(stub)
+                if plans:
+                    out.extend(plans)
+                    logger.info(f"    → {len(plans)} floor plan(s)")
+                else:
+                    out.append(stub)
+                    logger.info("    → 0 floor plans, keeping stub")
             except Exception as exc:
-                logger.warning(f"Detail error {listing.id}: {exc}")
-                enriched.append(listing)
-            if i < len(listings) - 1:
+                logger.warning(f"    Detail error: {exc}")
+                out.append(stub)
+            if i < len(stubs) - 1:
                 self.delay((2.5, 5.0))
-        return enriched
-
-    def _fetch_detail(self, listing):
-        url = listing.metadata.source_url
-        if not url:
-            return listing
-        self.navigate(url)
+        logger.info(f"Total after enrichment: {len(out)}")
+        return out
+    
+    def _extract_property_detail(self, stub):
+        self.navigate(stub.metadata.source_url)
         self._dismiss_popups()
         self.short_delay()
         self._scroll_page()
+
+        try:
+            self.wait_for_element(By.CSS_SELECTOR, _FP_VACANCY_CONTAINER, timeout=10)
+        except TimeoutException:
+            return []
+
+        rows = self.find_elements_safe(By.CSS_SELECTOR, _FP_VACANCY_ROW)
+        n_rows = len(rows)
+        logger.info(f"    {n_rows} vacancy row(s)")
+
+        listings = []
+        for idx in range(n_rows):
+            try:
+                plan = self._extract_floor_plan(stub, idx)
+                if plan:
+                    listings.append(plan)
+            except Exception as exc:
+                logger.debug(f"    Vacancy {idx} error: {exc}")
+            finally:
+                self._close_floor_plan_modal()
+            time.sleep(0.6)
+        return listings
+
+    def _extract_floor_plan(self, stub, idx):
+        btn_sel = _FP_DETAILS_BTN_TPL.format(n=idx + 1)
+        btn = self.find_element_safe(By.CSS_SELECTOR, btn_sel)
+        if not btn:
+            return None
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block:'center'});", btn
+        )
+        time.sleep(0.4)
+        self._safe_click(btn)
+
+        try:
+            self.wait_for_element(By.CSS_SELECTOR, _FP_RENT, timeout=8)
+        except TimeoutException:
+            return None
+        time.sleep(0.5)
+
         soup = BeautifulSoup(self.get_page_source(), "lxml")
-        sel = self.SELECTORS["detail"]
+        rent  = self._parse_rent_range(self._text(soup, _FP_RENT))
+        beds  = self._scan_beds(self._text(soup, _FP_SPECS_LI_TPL.format(n=1)))
+        baths = self._scan_baths(self._text(soup, _FP_SPECS_LI_TPL.format(n=2)))
+        sqft  = self._parse_sqft_range(self._text(soup, _FP_SPECS_LI_TPL.format(n=3)))
+        amenity_map = self._parse_modal_amenities(soup)
+        images = self._collect_modal_images()
 
-        desc_el = soup.select_one(sel["description"])
-        if desc_el:
-            listing.description = desc_el.get_text(" ", strip=True)
-
-        amenity_texts = []
-        for li in soup.select(sel["amenity_items"]):
-            txt = li.get_text(strip=True)
-            amenity_texts.append(txt)
-            self._apply_amenity(listing, txt.lower())
-        if amenity_texts:
-            listing.amenities.other_amenities = amenity_texts
-
-        for li in soup.select(sel["fee_items"]):
-            txt = li.get_text(strip=True).lower()
-            if "park" in txt:
-                m = re.search(r"\$?([\d,]+)", txt)
-                if m:
-                    listing.price.parking_fee = float(m.group(1).replace(",", ""))
-            if "deposit" in txt:
-                m = re.search(r"\$?([\d,]+)", txt)
-                if m:
-                    listing.price.security_deposit = float(
-                        m.group(1).replace(",", "")
-                    )
-
-        pet_el = soup.select_one(sel["pet_section"])
-        if pet_el:
-            pt = pet_el.get_text(strip=True).lower()
-            listing.features.pets_allowed = "allowed" in pt or "friendly" in pt
-            listing.features.cats_allowed = "cat" in pt and "no cat" not in pt
-            listing.features.dogs_allowed = "dog" in pt and "no dog" not in pt
-
-        cn = soup.select_one(sel["contact_name"])
-        if cn:
-            listing.metadata.contact_name = cn.get_text(strip=True)
-        cp = soup.select_one(sel["contact_phone"])
-        if cp:
-            listing.metadata.contact_phone = cp.get_text(strip=True)
-
+        src_id = f"{stub.metadata.source_id}_fp{idx}"
+        lid = RentalListing.generate_id(
+            self.SITE_NAME, src_id, stub.metadata.source_url
+        )
+        listing = RentalListing(
+            id=lid,
+            address=copy.deepcopy(stub.address),
+            price=PriceInfo(
+                base_rent=rent or RentValue(amount=0),
+                currency="CAD",
+            ),
+            features=PropertyFeatures(
+                bedrooms=beds, bathrooms=baths, square_feet=sqft,
+                property_type=PropertyType.APARTMENT,
+            ),
+            amenities=Amenities(),
+            metadata=ListingMetadata(
+                source_site=self.SITE_NAME,
+                source_url=stub.metadata.source_url,
+                source_id=src_id,
+                photo_urls=images,
+            ),
+            title=(
+                f"{stub.address.full_address} – "
+                f"{'Studio' if beds == 0 else f'{beds} BR'}"
+                if beds is not None else stub.address.full_address
+            ),
+        )
+        self._apply_amenity_map(listing, amenity_map)
         return listing
+
+    def _close_floor_plan_modal(self):
+        btn = self.find_element_safe(By.CSS_SELECTOR, _FP_CLOSE_BTN)
+        if btn and btn.is_displayed():
+            try:
+                self._safe_click(btn)
+                time.sleep(0.4)
+                return
+            except Exception:
+                pass
+        try:
+            self.driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+            time.sleep(0.3)
+        except Exception:
+            pass
+
+    def _collect_modal_images(self, max_images: int = 25) -> List[str]:
+        images: List[str] = []
+        seen = set()
+        first_src = None
+        for step in range(max_images):
+            img = self.find_element_safe(By.CSS_SELECTOR, _FP_ACTIVE_IMG)
+            src = (
+                (img.get_attribute("src") or img.get_attribute("data-src") or "")
+                if img else ""
+            )
+            if src and src not in seen:
+                images.append(src)
+                seen.add(src)
+                if first_src is None:
+                    first_src = src
+            elif src and src == first_src and step > 0:
+                break   # carousel wrapped
+
+            nxt = self.find_element_safe(By.CSS_SELECTOR, _FP_NEXT_IMG)
+            if not nxt or not nxt.is_displayed():
+                break
+            try:
+                self._safe_click(nxt)
+                time.sleep(0.35)
+            except Exception:
+                break
+        return images
+
+    def _parse_modal_amenities(self, soup) -> Dict[str, List[str]]:
+        """Return ``{category: [items]}`` from the modal's amenity list."""
+        out: Dict[str, List[str]] = {}
+        ul = soup.select_one(_FP_AMENITY_UL)
+        if not ul:
+            return out
+        for li in ul.select(":scope > li"):
+            cat_el = li.select_one(":scope > span")
+            items_ul = li.select_one(":scope > ul")
+            category = cat_el.get_text(strip=True) if cat_el else "Other"
+            items = (
+                [it.get_text(strip=True)
+                for it in items_ul.select(":scope > li")
+                if it.get_text(strip=True)]
+                if items_ul else []
+            )
+            out[category] = items
+        return out
+
+    def _apply_amenity_map(self, listing, amenity_map):
+        flat: List[str] = []
+        for cat, items in amenity_map.items():
+            for item in items:
+                flat.append(f"{cat}: {item}")
+                self._apply_amenity(listing, item.lower())
+        if flat:
+            listing.amenities.other_amenities = flat
+
+    # ── Parsers ─────────────────────────────────────────────────────────
+
+    @staticmethod
+    def _text(soup, sel: str) -> str:
+        el = soup.select_one(sel)
+        return el.get_text(" ", strip=True) if el else ""
+
+    @staticmethod
+    def _parse_rent_range(text: str) -> Optional[RentValue]:
+        """Handle '$2,100', '$2,100 – $2,800', 'Call for pricing', etc."""
+        if not text:
+            return None
+        t = (text.replace(",", "")
+                .replace("\u2013", "-")
+                .replace("\u2014", "-"))
+        nums = [float(n) for n in re.findall(r"\$?\s*(\d+(?:\.\d+)?)", t)]
+        nums = [n for n in nums if 100 <= n <= 50000]
+        if not nums:
+            return None
+        if len(nums) >= 2 and max(nums) != min(nums):
+            lo, hi = min(nums), max(nums)
+            return RentValue(amount=lo, min_amount=lo, max_amount=hi)
+        return RentValue(amount=nums[0])
+
+    @staticmethod
+    def _parse_sqft_range(text: str) -> Optional[int]:
+        if not text:
+            return None
+        nums = [
+            int(n.replace(",", ""))
+            for n in re.findall(r"(\d[\d,]*)", text)
+        ]
+        nums = [n for n in nums if n > 50]
+        return min(nums) if nums else None
 
     # ════════════════════════════════════════════════════════════════
     #  search_city
@@ -605,28 +773,23 @@ class ApartmentsComScraper(BaseScraper):
         if not addr_text:
             return None
 
-        price_el = None
-        for sel in self.SELECTORS["card_price"].split(","):
-            price_el = card.select_one(sel.strip())
-            if price_el:
-                break
-        price_text = price_el.get_text(strip=True) if price_el else ""
-        base_rent = self._parse_price_range(price_text)
+        # Selector-based extraction (may miss on UNVERIFIED markup).
+        price_el = self._select_first(card, self.SELECTORS["card_price"])
+        beds_el  = self._select_first(card, self.SELECTORS["card_beds"])
+        baths_el = self._select_first(card, ".bath-range, .property-baths")
 
-        beds_el = None
-        for sel in self.SELECTORS["card_beds"].split(","):
-            beds_el = card.select_one(sel.strip())
-            if beds_el:
-                break
-        beds = None
-        if beds_el:
-            beds_txt = beds_el.get_text(strip=True).lower()
-            if "studio" in beds_txt:
-                beds = 0
-            else:
-                m = re.search(r"(\d+)", beds_txt)
-                if m:
-                    beds = int(m.group(1))
+        price_text = price_el.get_text(" ", strip=True) if price_el else ""
+        beds_text  = beds_el.get_text(" ", strip=True)  if beds_el  else ""
+        baths_text = baths_el.get_text(" ", strip=True) if baths_el else ""
+
+        # Text-level fallback over the whole card — survives selector drift.
+        full_text = card.get_text(" ", strip=True)
+        base_rent = (
+            self._parse_price_range(price_text)
+            or self._scan_price(full_text)
+        )
+        beds = self._scan_beds(beds_text) or self._scan_beds(full_text)
+        baths = self._scan_baths(baths_text) or self._scan_baths(full_text)
 
         img_el = None
         for sel in self.SELECTORS["card_image"].split(","):
@@ -650,13 +813,19 @@ class ApartmentsComScraper(BaseScraper):
             full_address=addr_text, city=city, province=province,
             country="Canada",
         )
-        lid = RentalListing.generate_id(self.SITE_NAME, source_id, addr_text)
+        lid = RentalListing.generate_id(self.SITE_NAME, source_id, url)
 
         return RentalListing(
-            id=lid, address=address,
-            price=PriceInfo(base_rent=base_rent or 0, currency="CAD"),
+            id=lid, 
+            address=address,
+            price=PriceInfo(
+                base_rent=RentValue(amount=base_rent or 0),
+                currency="CAD",
+            ),
             features=PropertyFeatures(
-                bedrooms=beds, property_type=PropertyType.APARTMENT,
+                bedrooms=beds, 
+                bathrooms=baths,
+                property_type=PropertyType.APARTMENT,
             ),
             amenities=Amenities(),
             metadata=ListingMetadata(
@@ -666,6 +835,40 @@ class ApartmentsComScraper(BaseScraper):
             ),
             title=title or addr_text,
         )
+    
+    @staticmethod
+    def _select_first(card: Tag, csv: str) -> Optional[Tag]:
+        for sel in csv.split(","):
+            el = card.select_one(sel.strip())
+            if el:
+                return el
+        return None
+
+    @staticmethod
+    def _scan_price(text: str) -> Optional[float]:
+        # Avoid grabbing deposit/fee figures: anchor on "$NNNN" followed by
+        # optional /mo or whitespace, take the smallest sensible match.
+        candidates = re.findall(r"\$\s*([\d,]{3,})", text)
+        values = [float(c.replace(",", "")) for c in candidates if c]
+        values = [v for v in values if 300 <= v <= 15000]
+        return min(values) if values else None
+
+    @staticmethod
+    def _scan_beds(text: str) -> Optional[int]:
+        if not text:
+            return None
+        t = text.lower()
+        if "studio" in t or "bachelor" in t:
+            return 0
+        m = re.search(r"(\d+)\s*(?:bd|bed|br)\b", t)
+        return int(m.group(1)) if m else None
+
+    @staticmethod
+    def _scan_baths(text: str) -> Optional[float]:
+        if not text:
+            return None
+        m = re.search(r"(\d+(?:\.\d+)?)\s*(?:ba|bath)\b", text.lower())
+        return float(m.group(1)) if m else None
 
     # ════════════════════════════════════════════════════════════════
     #  Pagination

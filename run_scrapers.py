@@ -1,224 +1,151 @@
 """
-Orchestrator — runs enabled scrapers in two phases:
+Scraper orchestrator.
 
-1. **Stub collection** — paginate through search results.
-2. **Detail enrichment** — visit each stub's detail page (optional).
-
-Then normalises, deduplicates, merges into the persistent store,
-and prints a summary.
+Two usage modes:
+  • Excel UDF:  =scrape_now()    (async, non-blocking)
+                =scrape_status() (cheap polling cell)
+  • CLI:        py run_scrapers.py
 """
 
-import json
 import logging
+import threading
 from datetime import datetime
-from pathlib import Path
-from typing import Dict, List
-import sys
+from typing import List, Optional
 
-from config.settings import get_settings, SearchParameters
+import xlwings as xw
+
+from config.settings import get_settings
 from data.models import RentalListing
-from data.normalizer import normalize_listing, deduplicate_listings
+from data.normalizer import deduplicate_listings, normalize_listing
 from data.store import ListingStore
 from scrapers import (
-    RealtorCaScraper,
-    RentalsCaScraper,
     ApartmentsComScraper,
     DetailEnricher,
+    RealtorCaScraper,
+    RentalsCaScraper,
 )
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-)
 logger = logging.getLogger(__name__)
 
-# ── Scraper registry ──────────────────────────────────────────────
-
-SCRAPER_MAP = {
+SCRAPERS = {
     "realtor.ca":     RealtorCaScraper,
     "rentals.ca":     RentalsCaScraper,
     "apartments.com": ApartmentsComScraper,
 }
 
+# ── Shared run-state, observed by scrape_status() ──────────────────
+_run_lock = threading.Lock()
+_last_summary: str = "Idle"
 
-# ── Run a single scraper ─────────────────────────────────────────
 
-def run_scraper(
-    site: str,
-    params: SearchParameters,
-) -> List[RentalListing]:
-    cls = SCRAPER_MAP.get(site)
-    if cls is None:
-        logger.warning(f"No scraper registered for '{site}'")
-        return []
+def _set_status(msg: str):
+    global _last_summary
+    _last_summary = msg
 
-    scraper = cls(
-        headless=params.headless,
-        skip_covered_locations=params.skip_covered_locations,
-        max_price=params.max_price,
-        min_price=params.min_price,
-        min_beds=params.min_bedrooms,
-        max_beds=params.max_bedrooms,
-        min_baths=params.min_bathrooms,
-        max_baths=params.max_bathrooms,
-        min_sqft=params.min_sqft,
-        max_sqft=params.max_sqft,
-    )
 
+# ── Synchronous core (used by both UDF and CLI) ────────────────────
+
+def run_all_scrapers(settings) -> List[RentalListing]:
     all_listings: List[RentalListing] = []
-
-    with scraper:
-        logger.info(f"\n{'='*60}")
-        logger.info(f"{site.upper()} SCRAPER")
-        logger.info(f"{'='*60}")
-        logger.info(f"  Locations : {params.locations}")
-        logger.info(
-            f"  Price     : "
-            f"${params.min_price or 'any'} – ${params.max_price or 'any'}"
-        )
-        logger.info(f"  Beds      : {params.min_bedrooms} – {params.max_bedrooms or '+'}")
-        logger.info(f"  Baths     : {params.min_bathrooms} – {params.max_bathrooms or '+'}")
-        logger.info(f"  Sq.Ft.    : {params.min_sqft or 'any'} – {params.max_sqft or 'any'}")
-        logger.info(f"  Details   : {params.fetch_details}")
-        logger.info(f"  Skip cov. : {params.skip_covered_locations}")
-
-        # ── Phase 1: stub collection ─────────────────────────────
+    for site in settings.enabled_sites:
+        cls = SCRAPERS.get(site)
+        if cls is None:
+            logger.warning(f"No scraper registered for site: {site}")
+            continue
+        logger.info(f"\n=== {site} ===")
         try:
-            stubs = scraper.scrape_locations(
-                params.locations, max_pages=params.max_pages
-            )
+            with cls(
+                headless=settings.search.headless,
+                skip_covered_locations=settings.search.skip_covered_locations,
+                min_price=settings.search.min_price,
+                max_price=settings.search.max_price,
+                min_beds=settings.search.min_bedrooms,
+                max_beds=settings.search.max_bedrooms,
+                min_baths=settings.search.min_bathrooms,
+                max_baths=settings.search.max_bathrooms,
+                min_sqft=settings.search.min_sqft,
+                max_sqft=settings.search.max_sqft,
+            ) as scraper:
+                stubs = scraper.scrape_locations(
+                    settings.search.locations,
+                    max_pages=settings.search.max_pages,
+                )
+                if settings.search.fetch_details:
+                    listings = DetailEnricher(scraper).enrich(stubs)
+                else:
+                    listings = stubs
+                all_listings.extend(listings)
         except Exception as exc:
-            logger.error(f"Scraper error ({site}): {exc}")
-            scraper.stats.errors.append(str(exc))
-            stubs = []
-
-        logger.info(
-            f"\n{site} — {len(stubs)} stubs, "
-            f"{scraper.stats.pages_scraped} pages, "
-            f"cities: {sorted(scraper._seen_cities)}"
-        )
-
-        # ── Phase 2: detail enrichment ───────────────────────────
-        if params.fetch_details and stubs:
-            enricher = DetailEnricher(scraper)
-            all_listings = enricher.enrich(stubs)
-        else:
-            all_listings = stubs
-
+            logger.error(f"{site} run failed: {exc}", exc_info=True)
     return all_listings
 
 
-# ── Post-scrape pipeline ─────────────────────────────────────────
-
-def pipeline(
-    raw_by_domain: Dict[str, List[RentalListing]],
-    store: ListingStore,
-) -> ListingStore:
-    """Normalise → deduplicate → merge into store."""
-    for domain, listings in raw_by_domain.items():
-        logger.info(f"\nPipeline: {domain} ({len(listings)} raw)")
-        listings = [normalize_listing(l) for l in listings]
-        listings = deduplicate_listings(listings)
-        logger.info(f"  After dedup: {len(listings)}")
-        report = store.merge_results(listings)
-        logger.info(f"  Merge: {report.summary()}")
-        if report.field_changes:
-            for ch in report.field_changes[:20]:
-                logger.debug(f"    changed: {ch}")
-
+def _ingest(listings: List[RentalListing]) -> str:
+    """Normalize → dedupe → merge into store. Returns a summary string."""
+    listings = [normalize_listing(l) for l in listings]
+    listings = deduplicate_listings(listings)
+    store = ListingStore()
+    report = store.merge_results(listings)
     store.save()
-    return store
+    return report.summary()
 
 
-# ── Scraper-dump writer ──────────────────────────────────────────
+# ── UDFs ───────────────────────────────────────────────────────────
 
-def save_scraper_dump(
-    raw_by_domain: Dict[str, List[RentalListing]],
-    output_dir: Path,
-) -> Path:
-    """Dump the raw output of every scraper to scraper-dump.json.
+@xw.func(async_mode="threading")
+def scrape_now(caller) -> str:
+    """``=scrape_now()`` — run all enabled scrapers asynchronously.
 
-    The pipeline (store.json) is updated separately from this file —
-    scraper-dump.json is the single source of truth for "what came
-    back from this run", before normalisation / dedup / merge.
+    While the function is computing, Excel displays ``#GETTING_DATA``
+    in the host cell, which is the natural 'in progress' indicator —
+    no separate disable-button bookkeeping required.  Re-entry is
+    blocked by ``_run_lock``: a second call returns immediately with
+    a 'busy' marker.
     """
-    output_dir.mkdir(parents=True, exist_ok=True)
-    path = output_dir / "scraper-dump.json"
-
-    payload = {
-        domain: [l.to_dict() for l in listings]
-        for domain, listings in raw_by_domain.items()
-    }
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
-    logger.info(
-        f"Wrote scraper-dump.json: "
-        f"{sum(len(v) for v in payload.values())} listings → {path}"
-    )
-    return path
-
-
-def print_summary(store: ListingStore):
-    active = store.get_active()
-    by_city: Dict[str, List[RentalListing]] = {}
-    for l in active:
-        by_city.setdefault(l.address.city or "Unknown", []).append(l)
-
-    print(f"\n{'='*60}")
-    print("LISTINGS SUMMARY")
-    print(f"{'='*60}")
-    print(f"Total in store : {len(store.listings)}")
-    print(f"Active         : {len(active)}")
-    print(
-        f"Selected       : "
-        f"{sum(1 for l in store.listings.values() if l.is_selected)}"
-    )
-    print(
-        f"Discarded      : "
-        f"{sum(1 for l in store.listings.values() if l.is_discarded)}"
-    )
-
-    for city, items in sorted(by_city.items()):
-        prices = [x.price.base_rent for x in items if x.price.base_rent > 0]
-        print(f"\n  {city}: {len(items)} listings")
-        if prices:
-            print(
-                f"    ${min(prices):,.0f} – ${max(prices):,.0f}  "
-                f"(avg ${sum(prices)/len(prices):,.0f})"
-            )
-
-    by_beds: Dict[str, int] = {}
-    for l in active:
-        b = l.features.bedrooms
-        label = "Studio" if b == 0 else f"{b} bed" if b is not None else "?"
-        by_beds[label] = by_beds.get(label, 0) + 1
-    print(f"\n  By bedrooms: {dict(sorted(by_beds.items()))}")
+    if not _run_lock.acquire(blocking=False):
+        return f"{_last_summary} (already running)"
+    try:
+        _set_status("Running…")
+        started = datetime.now()
+        # Pull the latest config from settings.json (the Config-sheet
+        # sync happens on the Excel side via write-through cells; see
+        # ExcelInterface._sync_config_in()).
+        settings = get_settings()
+        listings = run_all_scrapers(settings)
+        summary = _ingest(listings)
+        elapsed = (datetime.now() - started).total_seconds()
+        msg = (
+            f"Done {datetime.now():%H:%M:%S} "
+            f"({elapsed:.0f}s) — {summary}"
+        )
+        _set_status(msg)
+        return msg
+    except Exception as exc:
+        msg = f"Error: {exc}"
+        _set_status(msg)
+        logger.exception("scrape_now failed")
+        return msg
+    finally:
+        _run_lock.release()
 
 
-# ── Main ─────────────────────────────────────────────────────────
+@xw.func
+def scrape_status(caller) -> str:
+    """``=scrape_status()`` — cheap snapshot of the last run's result."""
+    return _last_summary
+
+
+# ── CLI entry point ────────────────────────────────────────────────
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
     settings = get_settings()
-    params = settings.search
-    store = ListingStore()
-
-    raw_by_domain: Dict[str, List[RentalListing]] = {}
-    try:
-        for site in settings.enabled_sites:
-            raw_by_domain[site] = run_scraper(site, params)
-    except KeyboardInterrupt:
-        logger.warning("Interrupted by user — saving what we have …")
-
-    save_scraper_dump(raw_by_domain, Path("./data"))
-    pipeline(raw_by_domain, store)
-    print_summary(store)
-
-    logger.info("Done!")
+    listings = run_all_scrapers(settings)
+    print(_ingest(listings))
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        logger.warning("Interrupted by user")
-        sys.exit(0)
+    main()

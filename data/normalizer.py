@@ -94,12 +94,8 @@ def normalize_listing(listing: RentalListing) -> RentalListing:
         listing.address.province = normalize_province(listing.address.province)
 
     # Ensure rent is monthly and positive
-    if listing.price.base_rent and listing.price.base_rent < 0:
-        listing.price.base_rent = abs(listing.price.base_rent)
-
-    # Calculated adjusted rent
-    if listing.price.base_rent > 0 and listing.price.adjusted_rent is None:
-        listing.price.adjusted_rent = listing.price.calculate_adjusted_rent()
+    if listing.price.base_rent.amount and listing.price.base_rent.amount < 0:
+        listing.price.base_rent.amount = abs(listing.price.base_rent.amount)
 
     # Bedroom = 0 means studio
     if listing.features.bedrooms == 0:

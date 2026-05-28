@@ -25,7 +25,7 @@ from selenium.common.exceptions import (
 from data.models import (
     Address, Amenities, ListingMetadata, PriceInfo,
     PropertyFeatures, PropertyType, HeatingType, ParkingType,
-    LaundryType, RentalListing,
+    LaundryType, RentalListing, RentValue,
 )
 from .base_scraper import BaseScraper
 
@@ -632,7 +632,7 @@ class RealtorCaScraper(BaseScraper):
         return RentalListing(
             id=lid,
             address=address,
-            price=PriceInfo(base_rent=base_rent or 0, currency='CAD'),
+            price=PriceInfo(base_rent=RentValue(amount=base_rent or 0), currency='CAD'),
             features=PropertyFeatures(
                 bedrooms=beds, bathrooms=baths, square_feet=sqft,
                 property_type=PropertyType.APARTMENT,

@@ -126,7 +126,7 @@ class ListingStore:
             city = l.address.city or "Unknown"
             grouped.setdefault(city, []).append(l)
         for city in grouped:
-            grouped[city].sort(key=lambda x: x.price.base_rent or 9999)
+            grouped[city].sort(key=lambda x: x.price.base_rent.amount or 9999)
         return grouped
 
     def selected_grouped(self) -> Dict[str, Dict[str, List[RentalListing]]]:
@@ -178,7 +178,7 @@ class ListingStore:
     def _quality_score(listing: RentalListing) -> int:
         """Count critical fields present — must reach 3/5 to trust the data."""
         score = 0
-        if listing.price.base_rent and listing.price.base_rent > 0:
+        if listing.price.base_rent and listing.price.base_rent.amount > 0:
             score += 1
         if listing.address.full_address and listing.address.full_address.strip():
             score += 1
@@ -208,7 +208,6 @@ class ListingStore:
         changes += self._merge_dc(existing.address, new.address, "address")
         changes += self._merge_dc(
             existing.price, new.price, "price",
-            protect_zero={"base_rent", "adjusted_rent"},
         )
         changes += self._merge_dc(existing.features, new.features, "features")
         changes += self._merge_dc(existing.amenities, new.amenities, "amenities")
@@ -229,7 +228,6 @@ class ListingStore:
 
     def _merge_dc(
         self, old_obj, new_obj, prefix: str,
-        protect_zero: set = None,
     ) -> List[str]:
         protect_zero = protect_zero or set()
         changes: List[str] = []
@@ -276,13 +274,14 @@ class ListingStore:
             return False
         if old_val == new_val:
             return False
-        # Protect non-empty strings from being wiped
+        # Never let a zero-amount RentValue overwrite a real one.
+        from .models import RentValue
+        if isinstance(new_val, RentValue) and (new_val.amount or 0) == 0:
+            return False
         if isinstance(new_val, str) and not new_val.strip():
             return False
-        # Protect non-empty lists from being emptied
         if isinstance(new_val, list) and not new_val and old_val:
             return False
-        # Monotonic truth for booleans
         if isinstance(old_val, bool) and isinstance(new_val, bool):
             return new_val and not old_val
         return True
