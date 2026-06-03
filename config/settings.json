@@ -1,0 +1,28 @@
+{
+  "search": {
+    "locations": [
+      "Montreal",
+      "Laval",
+      "Longueuil"
+    ],
+    "max_price": 2500,
+    "min_bedrooms": 2,
+    "max_bedrooms": 2,
+    "min_bathrooms": 1.0,
+    "property_types": [
+      "apartment",
+      "condo",
+      "loft",
+      "studio"
+    ],
+    "skip_covered_locations": true,
+    "fetch_details": true,
+    "headless": false,
+    "max_pages": 2
+  },
+  "enabled_sites": [
+    "realtor.ca",
+    "rentals.ca",
+    "apartments.com"
+  ]
+}

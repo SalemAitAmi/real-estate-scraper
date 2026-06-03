@@ -1,0 +1,45 @@
+2026-05-29 21:53:26,417 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:53:26,491 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T3\A\rental_aggregator\data\store.json
+2026-05-29 21:53:26,514 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:54:19,811 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:54:19,885 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T3\A\rental_aggregator\data\store.json
+2026-05-29 21:54:19,917 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:55:08,584 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:55:08,653 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T3\A\rental_aggregator\data\store.json
+2026-05-29 21:55:08,681 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:56:29,575 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:56:47,876 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:56:47,952 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T3\A\rental_aggregator\data\store.json
+2026-05-29 21:56:47,981 INFO data.store: Loaded 234 listings from store
+2026-05-29 21:57:56,346 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:42,947 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:43,039 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T4\B\rental_aggregator\data\store.json
+2026-05-29 23:06:43,062 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:48,813 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:48,891 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T4\B\rental_aggregator\data\store.json
+2026-05-29 23:06:48,923 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:53,505 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:53,588 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T4\B\rental_aggregator\data\store.json
+2026-05-29 23:06:53,612 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:56,820 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:06:56,894 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T4\B\rental_aggregator\data\store.json
+2026-05-29 23:06:56,918 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:04,800 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:04,873 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T4\B\rental_aggregator\data\store.json
+2026-05-29 23:07:04,897 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:09,540 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:09,612 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\T4\B\rental_aggregator\data\store.json
+2026-05-29 23:07:09,635 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:14,022 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:17,105 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:17,119 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:50,371 INFO data.store: Loaded 234 listings from store
+2026-05-29 23:07:50,386 INFO data.store: Loaded 234 listings from store
+2026-06-03 13:25:29,985 INFO data.store: Loaded 234 listings from store
+2026-06-03 13:25:30,021 INFO mail.gmail_client: NullEmailClient draft (not sent): to='' subject='Inquiry about rental at 3928 Rue Ontario E., #35, Montréal (Mercier/Hochelaga-Maisonneuve), Quebec'
+2026-06-03 13:25:30,072 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\Final\rental_aggregator\data\store.json
+2026-06-03 13:25:30,095 INFO data.store: Loaded 234 listings from store
+2026-06-03 13:25:48,310 INFO data.store: Loaded 234 listings from store
+2026-06-03 13:25:48,339 INFO mail.gmail_client: NullEmailClient draft (not sent): to='' subject='Inquiry about rental at Domaine Bellerive Apartments - 1 Place De La Belle-Rive, Laval, QC'
+2026-06-03 13:25:48,390 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\Final\rental_aggregator\data\store.json
+2026-06-03 13:25:48,413 INFO data.store: Loaded 234 listings from store

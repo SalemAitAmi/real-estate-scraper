@@ -133,7 +133,9 @@ class ScraperSettings:
 @dataclass
 class ExcelSettings:
     workbook_name: str = "RentalAggregator.xlsm"
-    data_directory: Path = field(default_factory=lambda: Path("./data"))
+    data_directory: Path = field(
+        default_factory=lambda: Path(__file__).resolve().parent.parent / "data"
+    )
     config_sheet: str = "Config"
     selected_sheet: str = "Selected"
     discarded_sheet: str = "Discarded"
@@ -164,7 +166,9 @@ class OutlookSettings:
 
 class Settings:
     def __init__(self, config_path: Optional[Path] = None):
-        self.config_path = config_path or Path("./config/settings.json")
+        if config_path is None:
+            config_path = Path(__file__).resolve().parent / "settings.json"
+        self.config_path = Path(config_path)
         self.search = SearchParameters()
         self.scraper = ScraperSettings()
         self.excel = ExcelSettings()

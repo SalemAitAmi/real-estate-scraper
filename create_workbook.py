@@ -1,9 +1,12 @@
 """
 One-shot initializer for the Rental Aggregator workbook.
 
-Refuses to overwrite an existing file. After creation, open the
-workbook and click 'Import Functions' on the xlwings ribbon to
-register the UDFs from run_scrapers.py and excel/interface.py.
+• Places the .xlsm at the **project root** (next to this script).
+• Injects the ``RAAction`` VBA dispatcher so toolbar buttons work
+  immediately via the xlwings add-in's ``RunPython``.
+• Creates the ``xlwings.conf`` hidden sheet so "Import Functions"
+  on the xlwings ribbon registers the ``scrape_status`` UDF.
+• Refuses to overwrite an existing file.
 """
 
 import sys
@@ -14,17 +17,45 @@ import xlwings as xw
 from config.settings import get_settings
 from excel.interface import ExcelInterface
 
+PROJECT_ROOT = Path(__file__).resolve().parent
 
-# ── Module list for the xlwings.conf sheet ─────────────────────────
-UDF_MODULES = "run_scrapers;excel.interface"
+# Only excel/interface.py exposes UDFs now (just scrape_status).
+UDF_MODULES = "excel.interface"
+
+# Single source of truth for action → macro mapping.  Each action gets
+# a *parameterless* VBA sub named  RA_<action>  so that a button's
+# OnAction is a bare macro name (no argument-string parsing in Excel).
+_ACTIONS = [
+    "select", "discard", "restore", "message",
+    "refresh", "scrape", "save_config",
+]
 
 
-def _write_xlwings_conf(wb):
-    """Tell the xlwings add-in which modules to scan for UDFs."""
+def _build_vba() -> str:
+    """One parameterless sub per action, each calling button_action()."""
+    subs = []
+    for action in _ACTIONS:
+        subs.append(
+            f"Sub RA_{action}()\n"
+            f"    RunPython \"import excel.interface as i; "
+            f"i.button_action('{action}')\"\n"
+            f"End Sub"
+        )
+    return "\n\n".join(subs)
+
+
+def _inject_vba(wb: xw.Book):
+    """Add the ``RA_Macros`` module with one sub per action."""
+    comp = wb.api.VBProject.VBComponents.Add(1)   # vbext_ct_StdModule
+    comp.Name = "RA_Macros"
+    comp.CodeModule.AddFromString(_build_vba())
+
+
+def _write_xlwings_conf(wb: xw.Book):
+    """Hidden sheet consumed by the xlwings add-in for UDF registration."""
     sht = wb.sheets.add("xlwings.conf", after=wb.sheets[-1])
     sht.range("A1").value = "UDF MODULES"
     sht.range("B1").value = UDF_MODULES
-    # Hide rather than delete so users can edit later if needed.
     sht.api.Visible = 2   # xlSheetVeryHidden
 
 
@@ -40,24 +71,30 @@ def create_workbook(path: Path) -> Path:
     try:
         wb = app.books.active
 
-        initial = ["Config", *get_settings().enabled_sites,
-                   "Selected", "Discarded"]
+        # Create the initial tab order.
+        settings = get_settings()
+        initial = [
+            "Config",
+            *settings.enabled_sites,
+            "Selected",
+            "Discarded",
+        ]
         wb.sheets[0].name = initial[0]
         for name in initial[1:]:
             wb.sheets.add(name, after=wb.sheets[-1])
 
+        # Populate every sheet (store is empty → data sheets are blank).
         iface = ExcelInterface(workbook=wb)
-        iface.write_config(get_settings().search)
-        iface.write_all_domain_sheets(get_settings().enabled_sites)
+        iface.write_config_sheet(settings.search)
+        iface.write_all_domain_sheets(settings.enabled_sites)
         iface.write_selected_sheet()
         iface.write_discarded_sheet()
 
+        # Inject the VBA dispatcher + xlwings UDF config.
+        _inject_vba(wb)
         _write_xlwings_conf(wb)
 
         # FileFormat 52 = xlOpenXMLWorkbookMacroEnabled (.xlsm).
-        # COM requires an absolute path; relative paths get resolved
-        # against Excel's own working directory (My Documents), which
-        # is what produced the earlier 41879700 fallback name.
         wb.api.SaveAs(Filename=str(abs_path), FileFormat=52)
         return abs_path
     finally:
@@ -66,7 +103,7 @@ def create_workbook(path: Path) -> Path:
 
 def main():
     settings = get_settings()
-    path = Path(settings.excel.data_directory) / settings.excel.workbook_name
+    path = PROJECT_ROOT / settings.excel.workbook_name
     try:
         created = create_workbook(path)
     except FileExistsError as exc:

@@ -49,7 +49,11 @@ class MergeReport:
 
 class ListingStore:
     def __init__(self, store_path: Optional[Path] = None):
-        self.store_path = store_path or Path("./data/store.json")
+        if store_path is None:
+            # Anchor to this file so the path is correct regardless of
+            # the CWD (CLI vs. RunPython under the xlwings add-in).
+            store_path = Path(__file__).resolve().parent / "store.json"
+        self.store_path = Path(store_path)
         self.listings: Dict[str, RentalListing] = {}
         self.load()
 
@@ -226,17 +230,12 @@ class ListingStore:
 
     # ---- field-level helpers ----
 
-    def _merge_dc(
-        self, old_obj, new_obj, prefix: str,
-    ) -> List[str]:
-        protect_zero = protect_zero or set()
+    def _merge_dc(self, old_obj, new_obj, prefix: str) -> List[str]:
         changes: List[str] = []
         for f in dc_fields(old_obj):
             name = f.name
             old_v = getattr(old_obj, name)
             new_v = getattr(new_obj, name)
-            if name in protect_zero and isinstance(new_v, (int, float)) and new_v == 0:
-                continue
             if self._should_update(old_v, new_v):
                 setattr(old_obj, name, new_v)
                 changes.append(f"{prefix}.{name}")
