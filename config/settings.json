@@ -18,11 +18,31 @@
     "skip_covered_locations": true,
     "fetch_details": true,
     "headless": false,
-    "max_pages": 2
+    "auto_send_messages": false,
+    "max_pages": 1,
+    "first_name": "John",
+    "last_name": "Smith",
+    "contact_email": "johnsmith@gmail.com"
   },
   "enabled_sites": [
     "realtor.ca",
     "rentals.ca",
     "apartments.com"
+  ],
+  "visible_columns": [
+    "Address",
+    "City",
+    "Price",
+    "Beds",
+    "Baths",
+    "Sq.Ft.",
+    "Posted",
+    "Available",
+    "URL",
+    "Email",
+    "Unread",
+    "Notes",
+    "First Seen",
+    "Last Seen"
   ]
 }

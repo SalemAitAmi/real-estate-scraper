@@ -1,65 +1,39 @@
 """
-Unified data models for rental listings across all sites.
+Unified data models for rental listings. Source and Title removed from
+the Excel row; booleans render as ✓.
 """
 
 from dataclasses import dataclass, field, fields as dc_fields
 from typing import Optional, List, Dict, Any
 from datetime import datetime
 from enum import Enum
-import hashlib
-import copy
+import hashlib, copy
 
+_CHECK = "✓"
 
-# ────────────────────────────────────────────────────────────────────
-#  Enumerations
-# ────────────────────────────────────────────────────────────────────
+# ── Enumerations ───────────────────────────────────────────────────
 
 class PropertyType(Enum):
-    APARTMENT = "apartment"
-    CONDO = "condo"
-    HOUSE = "house"
-    TOWNHOUSE = "townhouse"
-    DUPLEX = "duplex"
-    TRIPLEX = "triplex"
-    STUDIO = "studio"
-    LOFT = "loft"
-    BASEMENT = "basement"
-    ROOM = "room"
-    OTHER = "other"
-
+    APARTMENT = "apartment"; CONDO = "condo"; HOUSE = "house"
+    TOWNHOUSE = "townhouse"; DUPLEX = "duplex"; TRIPLEX = "triplex"
+    STUDIO = "studio"; LOFT = "loft"; BASEMENT = "basement"
+    ROOM = "room"; OTHER = "other"
 
 class HeatingType(Enum):
-    ELECTRIC = "electric"
-    GAS = "gas"
-    OIL = "oil"
-    HYDRONIC = "hydronic"
-    RADIANT = "radiant"
-    FORCED_AIR = "forced_air"
-    HEAT_PUMP = "heat_pump"
-    BASEBOARD = "baseboard"
-    CENTRAL = "central"
+    ELECTRIC = "electric"; GAS = "gas"; OIL = "oil"
+    HYDRONIC = "hydronic"; RADIANT = "radiant"; FORCED_AIR = "forced_air"
+    HEAT_PUMP = "heat_pump"; BASEBOARD = "baseboard"; CENTRAL = "central"
     UNKNOWN = "unknown"
 
-
 class ParkingType(Enum):
-    INDOOR = "indoor"
-    OUTDOOR = "outdoor"
-    UNDERGROUND = "underground"
-    GARAGE = "garage"
-    STREET = "street"
-    NONE = "none"
-
+    INDOOR = "indoor"; OUTDOOR = "outdoor"; UNDERGROUND = "underground"
+    GARAGE = "garage"; STREET = "street"; NONE = "none"
 
 class LaundryType(Enum):
-    IN_UNIT = "in_unit"
-    IN_BUILDING = "in_building"
-    HOOKUPS = "hookups"
-    NONE = "none"
+    IN_UNIT = "in_unit"; IN_BUILDING = "in_building"
+    HOOKUPS = "hookups"; NONE = "none"
 
-
-# ────────────────────────────────────────────────────────────────────
-#  Nested value objects
-# ────────────────────────────────────────────────────────────────────
+# ── Nested value objects ───────────────────────────────────────────
 
 @dataclass
 class Address:
@@ -73,37 +47,21 @@ class Address:
     country: str = "Canada"
     latitude: Optional[float] = None
     longitude: Optional[float] = None
-
-    def __str__(self) -> str:
-        return self.full_address
-
+    def __str__(self) -> str: return self.full_address
 
 @dataclass
 class RentValue:
-    """Monthly rent — either a single value or a min/max range.
-
-    ``amount`` is the effective/primary number used for filtering,
-    sorting, and quality checks.  ``min_amount`` and ``max_amount``
-    are populated only when the listing advertises a range (common
-    for apartments.com floor plans with multiple vacant units).
-    """
     amount: float
     min_amount: Optional[float] = None
     max_amount: Optional[float] = None
-
     @property
     def is_range(self) -> bool:
-        return (
-            self.min_amount is not None
-            and self.max_amount is not None
-            and self.min_amount != self.max_amount
-        )
-
+        return (self.min_amount is not None and self.max_amount is not None
+                and self.min_amount != self.max_amount)
     def display(self) -> str:
         if self.is_range:
             return f"${self.min_amount:,.0f} – ${self.max_amount:,.0f}"
         return f"${self.amount:,.0f}" if self.amount else ""
-
 
 @dataclass
 class PriceInfo:
@@ -144,14 +102,10 @@ class PropertyFeatures:
     pet_restrictions: Optional[str] = None
     furnished: bool = False
     style: Optional[str] = None
-
     def get_sqft(self) -> Optional[int]:
-        if self.square_feet:
-            return self.square_feet
-        if self.square_meters:
-            return int(self.square_meters * 10.764)
+        if self.square_feet: return self.square_feet
+        if self.square_meters: return int(self.square_meters * 10.764)
         return None
-
 
 @dataclass
 class Amenities:
@@ -170,7 +124,6 @@ class Amenities:
     key_fob: bool = False
     wheelchair_accessible: bool = False
     other_amenities: List[str] = field(default_factory=list)
-
 
 @dataclass
 class ListingMetadata:
@@ -193,40 +146,24 @@ class ListingMetadata:
     price_change: Optional[str] = None
     time_on_site: Optional[str] = None
 
-
-# ────────────────────────────────────────────────────────────────────
-#  Serialisation helpers
-# ────────────────────────────────────────────────────────────────────
+# ── Serialisation helpers ──────────────────────────────────────────
 
 def _convert(obj: Any) -> Any:
-    """Recursively convert a dataclass tree into plain dicts/lists/values."""
-    if isinstance(obj, Enum):
-        return obj.value
-    if isinstance(obj, datetime):
-        return obj.isoformat()
+    if isinstance(obj, Enum): return obj.value
+    if isinstance(obj, datetime): return obj.isoformat()
     if hasattr(obj, "__dataclass_fields__"):
         return {k: _convert(getattr(obj, k)) for k in obj.__dataclass_fields__}
-    if isinstance(obj, (list, tuple)):
-        return [_convert(v) for v in obj]
-    if isinstance(obj, dict):
-        return {str(k): _convert(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)): return [_convert(v) for v in obj]
+    if isinstance(obj, dict): return {str(k): _convert(v) for k, v in obj.items()}
     return obj
 
-
 def _parse_dt(val: Any) -> Optional[datetime]:
-    if val is None:
-        return None
-    if isinstance(val, datetime):
-        return val
-    try:
-        return datetime.fromisoformat(str(val))
-    except (ValueError, TypeError):
-        return None
+    if val is None: return None
+    if isinstance(val, datetime): return val
+    try: return datetime.fromisoformat(str(val))
+    except (ValueError, TypeError): return None
 
-
-# ────────────────────────────────────────────────────────────────────
-#  Main listing model
-# ────────────────────────────────────────────────────────────────────
+# ── Main listing model ─────────────────────────────────────────────
 
 @dataclass
 class RentalListing:
@@ -236,7 +173,6 @@ class RentalListing:
     features: PropertyFeatures
     amenities: Amenities
     metadata: ListingMetadata
-    title: str = ""
     description: str = ""
 
     is_selected: bool = False
@@ -253,39 +189,23 @@ class RentalListing:
     amenities_nearby: Optional[str] = None
     utilities_sewer: Optional[str] = None
 
-    # ── ID generation ──
-
     @staticmethod
     def generate_id(source_site: str, source_id: str, unique_key: str) -> str:
-        """Generate a unique, stable ID for the listing.
-
-        Args:
-            source_site: Domain name (e.g. 'realtor.ca').
-            source_id:   Site-specific listing identifier.
-            unique_key:  Additional distinguishing value — use the full
-                        listing URL so that different units at the same
-                        street address always produce distinct IDs.
-        """
         raw = f"{source_site}:{source_id}:{unique_key}"
         return hashlib.sha256(raw.encode()).hexdigest()[:16]
-
-    # ── Serialisation ──
 
     def to_dict(self) -> Dict[str, Any]:
         return _convert(self)
 
     def to_excel_row(self) -> Dict[str, Any]:
+        """Flat dict keyed by column header. No Source or Title."""
         return {
             "ID": self.id,
-            "Source": self.metadata.source_site,
-            "Title": self.title,
             "Address": str(self.address),
             "City": self.address.city,
-            "Price": (
-                self.price.base_rent.display()
-                if self.price.base_rent.is_range
-                else self.price.base_rent.amount
-            ),
+            "Price": (self.price.base_rent.display()
+                      if self.price.base_rent.is_range
+                      else self.price.base_rent.amount),
             "Beds": self.features.bedrooms,
             "Baths": self.features.bathrooms,
             "Sq.Ft.": self.features.get_sqft(),
@@ -294,10 +214,8 @@ class RentalListing:
             "Heat Incl.": self.price.heating_included,
             "A/C": self.features.air_conditioning,
             "Laundry": self.features.laundry.value,
-            "Parking": (
-                self.features.parking_type.value
-                if self.features.parking_type else "N/A"
-            ),
+            "Parking": (self.features.parking_type.value
+                        if self.features.parking_type else "N/A"),
             "Pets": self.features.pets_allowed,
             "Balcony": self.features.balcony,
             "Gym": self.amenities.gym,
@@ -311,44 +229,25 @@ class RentalListing:
             "Last Seen": self.last_seen,
         }
 
-    # ── Deserialisation ──
-
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "RentalListing":
-        # --- Address ---
         address = Address(**data["address"])
-
-        # --- Price ---
-        pd = data["price"].copy()
-        pd["base_rent"] = RentValue(**pd["base_rent"])
+        pd = data["price"].copy(); pd["base_rent"] = RentValue(**pd["base_rent"])
         price = PriceInfo(**pd)
-
-        # --- Features (with enum reconstruction) ---
         fd = data["features"].copy()
         fd["property_type"] = PropertyType(fd.get("property_type", "apartment"))
         fd["heating_type"] = HeatingType(fd.get("heating_type", "unknown"))
-        if fd.get("parking_type"):
-            fd["parking_type"] = ParkingType(fd["parking_type"])
+        if fd.get("parking_type"): fd["parking_type"] = ParkingType(fd["parking_type"])
         fd["laundry"] = LaundryType(fd.get("laundry", "none"))
         features = PropertyFeatures(**fd)
-
-        # --- Amenities ---
         amenities = Amenities(**data["amenities"])
-
-        # --- Metadata (datetime parsing) ---
         md = data["metadata"].copy()
-        for key in ("scraped_at", "posted_date", "last_updated", "available_date"):
-            md[key] = _parse_dt(md.get(key))
+        for k in ("scraped_at", "posted_date", "last_updated", "available_date"):
+            md[k] = _parse_dt(md.get(k))
         metadata = ListingMetadata(**md)
-
         return cls(
-            id=data["id"],
-            address=address,
-            price=price,
-            features=features,
-            amenities=amenities,
-            metadata=metadata,
-            title=data.get("title", ""),
+            id=data["id"], address=address, price=price,
+            features=features, amenities=amenities, metadata=metadata,
             description=data.get("description", ""),
             is_selected=data.get("is_selected", False),
             is_discarded=data.get("is_discarded", False),
@@ -363,10 +262,7 @@ class RentalListing:
             utilities_sewer=data.get("utilities_sewer"),
         )
 
-
-# ────────────────────────────────────────────────────────────────────
-#  Building → expanded listings
-# ────────────────────────────────────────────────────────────────────
+# ── Building → expanded listings ──────────────────────────────────
 
 @dataclass
 class BuildingListing:
@@ -376,39 +272,24 @@ class BuildingListing:
     unit_types: List[Dict[str, Any]] = field(default_factory=list)
     metadata: ListingMetadata = field(
         default_factory=lambda: ListingMetadata(
-            source_site="", source_url="", source_id=""
-        )
-    )
+            source_site="", source_url="", source_id=""))
     amenities: Amenities = field(default_factory=Amenities)
 
-    def expand_to_listings(
-        self, target_bedrooms: Optional[int] = None
-    ) -> List[RentalListing]:
-        listings: List[RentalListing] = []
+    def expand_to_listings(self, target_bedrooms=None) -> List[RentalListing]:
+        out: List[RentalListing] = []
         for ut in self.unit_types:
             if target_bedrooms is not None and ut.get("bedrooms") != target_bedrooms:
                 continue
             lid = RentalListing.generate_id(
                 self.metadata.source_site,
                 f"{self.building_id}_{ut.get('bedrooms', 0)}br",
-                str(self.address),
-            )
-            listings.append(
-                RentalListing(
-                    id=lid,
-                    address=copy.deepcopy(self.address),
-                    price=PriceInfo(base_rent=ut.get("price_min", 0)),
-                    features=PropertyFeatures(
-                        bedrooms=ut.get("bedrooms"),
-                        bathrooms=ut.get("bathrooms"),
-                        square_feet=ut.get("sqft"),
-                    ),
-                    amenities=copy.deepcopy(self.amenities),
-                    metadata=copy.deepcopy(self.metadata),
-                    title=(
-                        f"{self.building_name or self.address.full_address}"
-                        f" – {ut.get('bedrooms', 0)} BR"
-                    ),
-                )
-            )
-        return listings
+                str(self.address))
+            out.append(RentalListing(
+                id=lid, address=copy.deepcopy(self.address),
+                price=PriceInfo(base_rent=ut.get("price_min", 0)),
+                features=PropertyFeatures(
+                    bedrooms=ut.get("bedrooms"), bathrooms=ut.get("bathrooms"),
+                    square_feet=ut.get("sqft")),
+                amenities=copy.deepcopy(self.amenities),
+                metadata=copy.deepcopy(self.metadata)))
+        return out

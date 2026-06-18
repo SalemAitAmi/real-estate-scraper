@@ -1,12 +1,5 @@
 """
-Scraper orchestrator.
-
-Two usage modes
-───────────────
-• **Button** — the Excel toolbar's *Scrape* button calls
-  ``excel.interface._start_scrape()``, which spawns a background
-  thread that calls ``run_all_scrapers`` → ``ingest``.
-• **CLI** — ``python run_scrapers.py``
+Scraper orchestrator — CLI and button entry point.
 """
 
 import logging
@@ -17,31 +10,25 @@ from data.models import RentalListing
 from data.normalizer import deduplicate_listings, normalize_listing
 from data.store import ListingStore
 from scrapers import (
-    ApartmentsComScraper,
-    DetailEnricher,
-    RealtorCaScraper,
-    RentalsCaScraper,
+    ApartmentsComScraper, DetailEnricher,
+    RealtorCaScraper, RentalsCaScraper, SelectorCatalog,
 )
 
 logger = logging.getLogger(__name__)
 
 SCRAPERS = {
     "realtor.ca":     RealtorCaScraper,
-    "rentals.ca":     RentalsCaScraper,
-    "apartments.com": ApartmentsComScraper,
+    #"rentals.ca":     RentalsCaScraper,
+    #"apartments.com": ApartmentsComScraper,
 }
 
 
-# ── Core pipeline (used by both the Excel button and the CLI) ──────
-
 def run_all_scrapers(settings) -> List[RentalListing]:
-    """Run every enabled scraper and return raw listings."""
     all_listings: List[RentalListing] = []
     for site in settings.enabled_sites:
         cls = SCRAPERS.get(site)
         if cls is None:
-            logger.warning("No scraper registered for site: %s", site)
-            continue
+            logger.warning("No scraper for site: %s", site); continue
         logger.info("\n=== %s ===", site)
         try:
             with cls(
@@ -58,38 +45,27 @@ def run_all_scrapers(settings) -> List[RentalListing]:
             ) as scraper:
                 stubs = scraper.scrape_locations(
                     settings.search.locations,
-                    max_pages=settings.search.max_pages,
-                )
-                if settings.search.fetch_details:
-                    listings = DetailEnricher(scraper).enrich(stubs)
-                else:
-                    listings = stubs
+                    max_pages=settings.search.max_pages)
+                listings = (DetailEnricher(scraper).enrich(stubs)
+                            if settings.search.fetch_details else stubs)
                 all_listings.extend(listings)
         except Exception as exc:
             logger.error("%s run failed: %s", site, exc, exc_info=True)
+    SelectorCatalog.save()
     return all_listings
 
 
 def ingest(listings: List[RentalListing]) -> str:
-    """Normalize → deduplicate → merge into the JSON store.
-
-    Returns a human-readable summary string.
-    """
     listings = [normalize_listing(l) for l in listings]
     listings = deduplicate_listings(listings)
     store = ListingStore()
-    report = store.merge_results(listings)
-    store.save()
+    report = store.merge_results(listings); store.save()
     return report.summary()
 
 
-# ── CLI ────────────────────────────────────────────────────────────
-
 def main():
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
-    )
+    logging.basicConfig(level=logging.INFO,
+                        format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     settings = get_settings()
     listings = run_all_scrapers(settings)
     print(ingest(listings))

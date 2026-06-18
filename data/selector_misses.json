@@ -1,0 +1,3502 @@
+[
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/montreal/la-montagne-upscale-apartments",
+    "ts": "2026-06-03T15:13:03.182920"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/montreal/la-montagne-upscale-apartments",
+    "ts": "2026-06-03T15:13:03.185920"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/montreal/5999-monkland",
+    "ts": "2026-06-03T15:13:18.159275"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/montreal/5999-monkland",
+    "ts": "2026-06-03T15:13:18.174531"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/montreal/5999-monkland",
+    "ts": "2026-06-03T15:13:18.192890"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/montreal/5301-5317-sherbrooke-street-west",
+    "ts": "2026-06-03T15:13:33.861060"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/montreal/5301-5317-sherbrooke-street-west",
+    "ts": "2026-06-03T15:13:33.875058"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/montreal/5301-5317-sherbrooke-street-west",
+    "ts": "2026-06-03T15:13:33.889292"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3653-av-jean-beraud",
+    "ts": "2026-06-03T15:13:50.603892"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3653-av-jean-beraud",
+    "ts": "2026-06-03T15:13:50.620891"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3653-av-jean-beraud",
+    "ts": "2026-06-03T15:13:50.638891"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/equinoxe-levesque-ouest",
+    "ts": "2026-06-03T15:14:08.467725"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/equinoxe-levesque-ouest",
+    "ts": "2026-06-03T15:14:08.487045"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/equinoxe-levesque-ouest",
+    "ts": "2026-06-03T15:14:08.508045"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/quartier-unilia",
+    "ts": "2026-06-03T15:14:24.690981"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/quartier-unilia",
+    "ts": "2026-06-03T15:14:24.706860"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/quartier-unilia",
+    "ts": "2026-06-03T15:14:24.721996"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/market-apartments",
+    "ts": "2026-06-03T15:14:41.230722"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/market-apartments",
+    "ts": "2026-06-03T15:14:41.246721"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/market-apartments",
+    "ts": "2026-06-03T15:14:41.261868"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1-place-de-la-belle-rive-1",
+    "ts": "2026-06-03T15:14:57.622108"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1-place-de-la-belle-rive-1",
+    "ts": "2026-06-03T15:14:57.637108"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1-place-de-la-belle-rive-1",
+    "ts": "2026-06-03T15:14:57.653106"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/777-boul-le-corbusier",
+    "ts": "2026-06-03T15:15:14.668338"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/777-boul-le-corbusier",
+    "ts": "2026-06-03T15:15:14.684334"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/777-boul-le-corbusier",
+    "ts": "2026-06-03T15:15:14.700335"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/mostra-centropolis",
+    "ts": "2026-06-03T15:15:31.670069"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/mostra-centropolis",
+    "ts": "2026-06-03T15:15:31.685068"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/mostra-centropolis",
+    "ts": "2026-06-03T15:15:31.701068"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3030-boulevard-levesque-ouest",
+    "ts": "2026-06-03T15:15:48.323519"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3030-boulevard-levesque-ouest",
+    "ts": "2026-06-03T15:15:48.340554"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3030-boulevard-levesque-ouest",
+    "ts": "2026-06-03T15:15:48.356555"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3980-boulevard-saint-elzear-o",
+    "ts": "2026-06-03T15:16:04.907921"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3980-boulevard-saint-elzear-o",
+    "ts": "2026-06-03T15:16:04.924925"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3980-boulevard-saint-elzear-o",
+    "ts": "2026-06-03T15:16:04.940804"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3870-boulevard-st-elzear-ouest",
+    "ts": "2026-06-03T15:16:20.006655"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3870-boulevard-st-elzear-ouest",
+    "ts": "2026-06-03T15:16:20.026655"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3870-boulevard-st-elzear-ouest",
+    "ts": "2026-06-03T15:16:20.041655"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1585-boulevard-des-laurentides",
+    "ts": "2026-06-03T15:16:35.697058"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1585-boulevard-des-laurentides",
+    "ts": "2026-06-03T15:16:35.713004"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1585-boulevard-des-laurentides",
+    "ts": "2026-06-03T15:16:35.728766"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1555-laval-boulevard-1",
+    "ts": "2026-06-03T15:16:50.597173"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1555-laval-boulevard-1",
+    "ts": "2026-06-03T15:16:50.614025"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1555-laval-boulevard-1",
+    "ts": "2026-06-03T15:16:50.630029"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3105-promenade-du-quartier-saint-martin-1",
+    "ts": "2026-06-03T15:17:06.540747"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3105-promenade-du-quartier-saint-martin-1",
+    "ts": "2026-06-03T15:17:06.556747"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3105-promenade-du-quartier-saint-martin-1",
+    "ts": "2026-06-03T15:17:06.571748"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/equinoxe-st-elzear-tour-3",
+    "ts": "2026-06-03T15:17:24.625188"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/equinoxe-st-elzear-tour-3",
+    "ts": "2026-06-03T15:17:24.641501"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/equinoxe-st-elzear-tour-3",
+    "ts": "2026-06-03T15:17:24.657501"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3580-boulevard-saint-elzear-ouest",
+    "ts": "2026-06-03T15:17:38.358349"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3580-boulevard-saint-elzear-ouest",
+    "ts": "2026-06-03T15:17:38.368352"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3580-boulevard-saint-elzear-ouest",
+    "ts": "2026-06-03T15:17:38.378351"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/4000-saint-elzear-o",
+    "ts": "2026-06-03T15:17:52.738780"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/4000-saint-elzear-o",
+    "ts": "2026-06-03T15:17:52.746786"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/4000-saint-elzear-o",
+    "ts": "2026-06-03T15:17:52.755786"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/axial-towers",
+    "ts": "2026-06-03T15:18:08.057530"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/axial-towers",
+    "ts": "2026-06-03T15:18:08.068529"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/axial-towers",
+    "ts": "2026-06-03T15:18:08.078531"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3405-boul-le-carrefour-id1095272",
+    "ts": "2026-06-03T15:18:21.250710"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3405-boul-le-carrefour-id1095272",
+    "ts": "2026-06-03T15:18:21.260709"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3405-boul-le-carrefour-id1095272",
+    "ts": "2026-06-03T15:18:21.270537"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1355-le-corbusier-blvd",
+    "ts": "2026-06-03T15:18:35.705108"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1355-le-corbusier-blvd",
+    "ts": "2026-06-03T15:18:35.714110"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1355-le-corbusier-blvd",
+    "ts": "2026-06-03T15:18:35.723109"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3270-boulevard-saint-martin-est-1",
+    "ts": "2026-06-03T15:18:48.195413"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3270-boulevard-saint-martin-est-1",
+    "ts": "2026-06-03T15:18:48.204411"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3270-boulevard-saint-martin-est-1",
+    "ts": "2026-06-03T15:18:48.213420"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1555-boulevard-chomedey-1",
+    "ts": "2026-06-03T15:19:01.072436"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1555-boulevard-chomedey-1",
+    "ts": "2026-06-03T15:19:01.082382"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1555-boulevard-chomedey-1",
+    "ts": "2026-06-03T15:19:01.092382"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3530-boulevard-de-la-concorde-est",
+    "ts": "2026-06-03T15:19:14.045995"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3530-boulevard-de-la-concorde-est",
+    "ts": "2026-06-03T15:19:14.054000"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3530-boulevard-de-la-concorde-est",
+    "ts": "2026-06-03T15:19:14.062004"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/2130-rue-du-portage",
+    "ts": "2026-06-03T15:19:27.370069"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/2130-rue-du-portage",
+    "ts": "2026-06-03T15:19:27.377069"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/2130-rue-du-portage",
+    "ts": "2026-06-03T15:19:27.385081"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1165-rue-du-grand-pic",
+    "ts": "2026-06-03T15:19:39.431545"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1165-rue-du-grand-pic",
+    "ts": "2026-06-03T15:19:39.439552"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1165-rue-du-grand-pic",
+    "ts": "2026-06-03T15:19:39.446551"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1555-boulevard-chomedey-1",
+    "ts": "2026-06-03T15:19:54.305550"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1555-boulevard-chomedey-1",
+    "ts": "2026-06-03T15:19:54.314800"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1555-boulevard-chomedey-1",
+    "ts": "2026-06-03T15:19:54.324800"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/rue-sylvie-2",
+    "ts": "2026-06-03T15:20:08.734973"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/rue-sylvie-2",
+    "ts": "2026-06-03T15:20:08.742972"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/rue-sylvie-2",
+    "ts": "2026-06-03T15:20:08.750972"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/3055-place-alton-goldbloom",
+    "ts": "2026-06-03T15:20:23.687296"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/3055-place-alton-goldbloom",
+    "ts": "2026-06-03T15:20:23.695296"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/3055-place-alton-goldbloom",
+    "ts": "2026-06-03T15:20:23.705780"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/laval/chomedey-id914537",
+    "ts": "2026-06-03T15:20:36.345301"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/chomedey-id914537",
+    "ts": "2026-06-03T15:20:36.366509"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/chomedey-id914537",
+    "ts": "2026-06-03T15:20:36.374876"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/chomedey-id914537",
+    "ts": "2026-06-03T15:20:36.382878"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/laval/roomies-1175509",
+    "ts": "2026-06-03T15:20:49.151091"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/roomies-1175509",
+    "ts": "2026-06-03T15:20:49.175421"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/roomies-1175509",
+    "ts": "2026-06-03T15:20:49.183419"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/roomies-1175509",
+    "ts": "2026-06-03T15:20:49.191419"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/2144-100e-avenue",
+    "ts": "2026-06-03T15:21:02.539217"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/2144-100e-avenue",
+    "ts": "2026-06-03T15:21:02.547985"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/2144-100e-avenue",
+    "ts": "2026-06-03T15:21:02.555985"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/laval/2525-avenue-du-havre-des-iles",
+    "ts": "2026-06-03T15:21:17.790421"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/2525-avenue-du-havre-des-iles",
+    "ts": "2026-06-03T15:21:17.830426"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/2525-avenue-du-havre-des-iles",
+    "ts": "2026-06-03T15:21:17.839428"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/2525-avenue-du-havre-des-iles",
+    "ts": "2026-06-03T15:21:17.847430"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1167-rue-du-grand-pic-1",
+    "ts": "2026-06-03T15:21:30.808661"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1167-rue-du-grand-pic-1",
+    "ts": "2026-06-03T15:21:30.816661"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1167-rue-du-grand-pic-1",
+    "ts": "2026-06-03T15:21:30.825468"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/97-66e-avenue",
+    "ts": "2026-06-03T15:21:44.205403"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/97-66e-avenue",
+    "ts": "2026-06-03T15:21:44.214404"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/97-66e-avenue",
+    "ts": "2026-06-03T15:21:44.223409"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/551-rue-etienne-lavoie",
+    "ts": "2026-06-03T15:21:56.344461"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/551-rue-etienne-lavoie",
+    "ts": "2026-06-03T15:21:56.353460"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/551-rue-etienne-lavoie",
+    "ts": "2026-06-03T15:21:56.362463"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/4360-rue-du-catamaran",
+    "ts": "2026-06-03T15:22:09.001203"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/4360-rue-du-catamaran",
+    "ts": "2026-06-03T15:22:09.009205"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/4360-rue-du-catamaran",
+    "ts": "2026-06-03T15:22:09.016206"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/321-81e-avenue",
+    "ts": "2026-06-03T15:22:23.619547"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/321-81e-avenue",
+    "ts": "2026-06-03T15:22:23.627547"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/321-81e-avenue",
+    "ts": "2026-06-03T15:22:23.636212"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/laval/1167-rue-du-grand-pic",
+    "ts": "2026-06-03T15:22:36.044129"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/laval/1167-rue-du-grand-pic",
+    "ts": "2026-06-03T15:22:36.052128"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/laval/1167-rue-du-grand-pic",
+    "ts": "2026-06-03T15:22:36.061128"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/2500-rue-maurice-savoie",
+    "ts": "2026-06-03T15:22:50.689117"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/2500-rue-maurice-savoie",
+    "ts": "2026-06-03T15:22:50.696117"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/2500-rue-maurice-savoie",
+    "ts": "2026-06-03T15:22:50.703115"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/2540-rue-maurice-savoie",
+    "ts": "2026-06-03T15:23:04.985440"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/2540-rue-maurice-savoie",
+    "ts": "2026-06-03T15:23:04.994441"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/2540-rue-maurice-savoie",
+    "ts": "2026-06-03T15:23:05.002442"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/louis-alexandre",
+    "ts": "2026-06-03T15:23:19.543308"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/louis-alexandre",
+    "ts": "2026-06-03T15:23:19.552309"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/louis-alexandre",
+    "ts": "2026-06-03T15:23:19.561612"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/mostra-longueuil",
+    "ts": "2026-06-03T15:23:33.958498"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/mostra-longueuil",
+    "ts": "2026-06-03T15:23:33.967498"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/mostra-longueuil",
+    "ts": "2026-06-03T15:23:33.977255"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/235-245-cuvillier-street",
+    "ts": "2026-06-03T15:23:46.864336"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/235-245-cuvillier-street",
+    "ts": "2026-06-03T15:23:46.873335"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/235-245-cuvillier-street",
+    "ts": "2026-06-03T15:23:46.882335"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/longueuil/101-port-de-mer",
+    "ts": "2026-06-03T15:23:59.972586"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/101-port-de-mer",
+    "ts": "2026-06-03T15:24:00.007614"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/101-port-de-mer",
+    "ts": "2026-06-03T15:24:00.016588"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/101-port-de-mer",
+    "ts": "2026-06-03T15:24:00.024586"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/domaine-d-iberville-apartments",
+    "ts": "2026-06-03T15:24:13.057115"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/domaine-d-iberville-apartments",
+    "ts": "2026-06-03T15:24:13.066116"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/domaine-d-iberville-apartments",
+    "ts": "2026-06-03T15:24:13.075340"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/longueuil/1742-avenue-victoria",
+    "ts": "2026-06-03T15:24:26.099916"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/1742-avenue-victoria",
+    "ts": "2026-06-03T15:24:26.129921"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/1742-avenue-victoria",
+    "ts": "2026-06-03T15:24:26.138925"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/1742-avenue-victoria",
+    "ts": "2026-06-03T15:24:26.146921"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/667-boulevard-nobert",
+    "ts": "2026-06-03T15:24:39.262304"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/667-boulevard-nobert",
+    "ts": "2026-06-03T15:24:39.270319"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/667-boulevard-nobert",
+    "ts": "2026-06-03T15:24:39.279303"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/90-boulevard-jean-paul-vincent",
+    "ts": "2026-06-03T15:24:52.097761"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/90-boulevard-jean-paul-vincent",
+    "ts": "2026-06-03T15:24:52.106129"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/90-boulevard-jean-paul-vincent",
+    "ts": "2026-06-03T15:24:52.115129"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/725-rue-du-roussillon",
+    "ts": "2026-06-03T15:25:06.106011"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/725-rue-du-roussillon",
+    "ts": "2026-06-03T15:25:06.114808"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/725-rue-du-roussillon",
+    "ts": "2026-06-03T15:25:06.123784"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/735-rue-darveau",
+    "ts": "2026-06-03T15:25:18.688753"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/735-rue-darveau",
+    "ts": "2026-06-03T15:25:18.697753"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/735-rue-darveau",
+    "ts": "2026-06-03T15:25:18.706286"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/141-rue-frontenac-1",
+    "ts": "2026-06-03T15:25:32.182063"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/141-rue-frontenac-1",
+    "ts": "2026-06-03T15:25:32.191062"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/141-rue-frontenac-1",
+    "ts": "2026-06-03T15:25:32.200065"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/1296-rue-de-la-providence",
+    "ts": "2026-06-03T15:25:44.702307"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/1296-rue-de-la-providence",
+    "ts": "2026-06-03T15:25:44.710308"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/1296-rue-de-la-providence",
+    "ts": "2026-06-03T15:25:44.719308"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/2009-rue-notre-dame-de-graces",
+    "ts": "2026-06-03T15:25:59.064048"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/2009-rue-notre-dame-de-graces",
+    "ts": "2026-06-03T15:25:59.073049"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/2009-rue-notre-dame-de-graces",
+    "ts": "2026-06-03T15:25:59.083131"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/longueuil/2895-rue-quevillon-id1213160",
+    "ts": "2026-06-03T15:26:11.294879"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/2895-rue-quevillon-id1213160",
+    "ts": "2026-06-03T15:26:11.325120"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/2895-rue-quevillon-id1213160",
+    "ts": "2026-06-03T15:26:11.333119"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/2895-rue-quevillon-id1213160",
+    "ts": "2026-06-03T15:26:11.342119"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/937-rue-prefontaine",
+    "ts": "2026-06-03T15:26:25.131065"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/937-rue-prefontaine",
+    "ts": "2026-06-03T15:26:25.139065"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/937-rue-prefontaine",
+    "ts": "2026-06-03T15:26:25.147877"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/2290-rue-laurier-1",
+    "ts": "2026-06-03T15:26:40.206097"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/2290-rue-laurier-1",
+    "ts": "2026-06-03T15:26:40.214097"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/2290-rue-laurier-1",
+    "ts": "2026-06-03T15:26:40.224265"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "parking_span",
+    "selector": "li.listing-card-bar__features--selectable > span",
+    "url": "https://rentals.ca/longueuil/scardera-investissements-1820",
+    "ts": "2026-06-03T15:26:52.504891"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_name",
+    "selector": ".listing-contact .contact-name",
+    "url": "https://rentals.ca/longueuil/scardera-investissements-1820",
+    "ts": "2026-06-03T15:26:52.528309"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_phone",
+    "selector": ".listing-contact a[href^='tel:']",
+    "url": "https://rentals.ca/longueuil/scardera-investissements-1820",
+    "ts": "2026-06-03T15:26:52.536309"
+  },
+  {
+    "site": "rentals.ca",
+    "name": "detail.contact_email",
+    "selector": ".listing-contact a[href^='mailto:']",
+    "url": "https://rentals.ca/longueuil/scardera-investissements-1820",
+    "ts": "2026-06-03T15:26:52.544312"
+  },
+  {
+    "site": "apartments.com",
+    "name": "filters_button",
+    "selector": "#advancedFiltersIcon",
+    "url": "https://www.apartments.com/",
+    "ts": "2026-06-03T15:27:20.904611"
+  },
+  {
+    "site": "apartments.com",
+    "name": "listing_card",
+    "selector": "#placardContainer > ul > li",
+    "url": "https://www.apartments.com/",
+    "ts": "2026-06-03T15:27:34.540516"
+  },
+  {
+    "site": "apartments.com",
+    "name": "filters_button",
+    "selector": "#advancedFiltersIcon",
+    "url": "https://www.apartments.com/",
+    "ts": "2026-06-03T15:28:03.231336"
+  },
+  {
+    "site": "apartments.com",
+    "name": "listing_card",
+    "selector": "#placardContainer > ul > li",
+    "url": "https://www.apartments.com/",
+    "ts": "2026-06-03T15:28:17.163596"
+  },
+  {
+    "site": "apartments.com",
+    "name": "filters_button",
+    "selector": "#advancedFiltersIcon",
+    "url": "https://www.apartments.com/",
+    "ts": "2026-06-03T15:28:45.577898"
+  },
+  {
+    "site": "apartments.com",
+    "name": "listing_card",
+    "selector": "#placardContainer > ul > li",
+    "url": "https://www.apartments.com/",
+    "ts": "2026-06-03T15:28:58.920401"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.388925"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.407925"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.423924"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.438925"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.449924"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.466925"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.478924"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.510926"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.521928"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.532926"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.542956"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.556923"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:23:44.597091"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.427245"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.442250"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.457251"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.469252"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.486251"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.502251"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.513400"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.526402"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.538401"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.550402"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.562401"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.573986"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.585521"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.596520"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.606860"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.615885"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.624883"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.633882"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:23:58.642882"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:13.961249"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:13.978585"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.001379"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.016548"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.028561"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.046809"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.067541"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.079786"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.089793"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.100284"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.110283"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:24:14.120282"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.124984"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.144343"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.156342"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.170159"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.184156"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.195732"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.206627"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.218626"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.230627"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.242627"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.254628"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.265648"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.276716"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.288716"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.300716"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.311366"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.320188"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:24:30.329186"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.430097"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.454538"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.469540"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.483457"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.494332"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.506306"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.517307"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.529308"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.543339"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.555646"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.566719"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.578720"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.588021"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.598019"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.606639"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:24:43.615637"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.719435"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.739634"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.788891"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.800890"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.810872"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.819868"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.829691"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:24:56.840682"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.627003"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.650022"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.665024"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.style",
+    "selector": "#propertyDetailsSectionVal_Style > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.678021"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.692589"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.710590"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.727858"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.739863"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.751698"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.763704"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.773705"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.782703"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.792703"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:25:10.802706"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:25.987479"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.003478"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.014833"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.046277"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.064817"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.075823"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.084405"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.093410"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.103410"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:25:26.112615"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.894712"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.913709"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.932043"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.949044"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.959047"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.971046"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.981405"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:41.999374"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:42.010925"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:42.019920"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:42.029926"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:42.037762"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:25:42.046762"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.043570"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.061833"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.070838"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.081919"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.098586"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.106585"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.115585"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.128075"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.136074"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.144080"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.152076"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.159873"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.166881"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.173879"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:25:56.181878"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.830837"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.844877"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.855607"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.865603"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.874677"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.886234"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.899236"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.916898"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.926902"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.936030"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.945036"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.954470"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.962874"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.970874"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.977873"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.984873"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851376/68-6e-avenue-6a-lile-perrot",
+    "ts": "2026-06-04T10:26:14.993874"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.518745"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.538745"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.554677"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.568674"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.580293"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.596599"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.608589"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.624022"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.635341"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.645343"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.654674"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.663822"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853813/460-rue-st-charles-o-311-longueuil-le-vieux-longueuil",
+    "ts": "2026-06-04T10:26:29.672908"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.225817"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.241818"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.255817"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.267973"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.282001"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.296482"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.307482"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.319483"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.331041"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.343040"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.354019"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.365019"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.377019"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.391020"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.406550"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.415554"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.426560"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.435468"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853723/6900-av-de-gaspe-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:26:44.444467"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:26:59.998116"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.017129"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.040118"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.058117"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.071203"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.089164"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.109682"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.121681"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.132319"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.141307"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.151325"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29853702/1220-boul-lucille-teasdale-311-terrebonne-lachenaie-carrefour-des-fleurs",
+    "ts": "2026-06-04T10:27:00.162325"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.868255"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.887676"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.900652"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.915653"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.930459"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.943462"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.954778"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.966782"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.978785"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:14.990501"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.002510"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.014510"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.025511"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.035860"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.044865"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.053864"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.063016"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852604/7457-av-stuart-montreal-villeraysaint-michelparc-extension-parc-extension",
+    "ts": "2026-06-04T10:27:15.072025"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.165143"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.188325"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.204321"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.219732"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.232719"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.244716"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.255718"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.266754"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.280760"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.291898"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.303143"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.315210"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.324740"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.333802"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.343804"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29852502/1875-rue-bossuet-1-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:27:30.352849"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.616329"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.638330"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.685369"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.698370"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.708242"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.717924"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.728924"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851824/1700-boul-angrignon-305-montreal-lasalle",
+    "ts": "2026-06-04T10:27:44.739411"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.352235"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.379240"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.396242"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.style",
+    "selector": "#propertyDetailsSectionVal_Style > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.408240"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.422745"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.439946"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.455026"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.467026"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.478024"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.488082"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.497085"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.507375"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.516857"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851420/6273-rue-mazarin-montreal-le-sud-ouest-ville-emard",
+    "ts": "2026-06-04T10:27:58.525858"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.487185"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.storeys",
+    "selector": "#propertyDetailsSectionContentSubCon_Stories > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.503173"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.516176"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.548569"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.568644"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.579645"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.589312"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.599317"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.608594"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851417/7235-rue-chouinard-montreal-lasalle",
+    "ts": "2026-06-04T10:28:12.618653"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.043641"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.neighbourhood",
+    "selector": "#propertyDetailsSectionContentSubCon_NeighborhoodName > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.062640"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.081667"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.097752"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.112758"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.128324"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.139324"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.159326"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.170461"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.179435"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.188434"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.198435"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851392/319-rue-notre-dame-201-repentigny-repentigny",
+    "ts": "2026-06-04T10:28:26.207355"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.703054"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.721469"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.729468"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.741469"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.758468"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.767930"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.775904"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.787899"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.796897"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.805898"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.815896"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.826930"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.834916"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.842917"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851377/6588-av-henri-julien-montreal-rosemontla-petite-patrie-little-italy",
+    "ts": "2026-06-04T10:28:43.849917"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.price_change",
+    "selector": "#listingDetailsTopInnerCon > div.leftTableCell > div.PriceChangeOnRealtorCon.tag.priceChangeOnRealtorTag",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.332043"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.year_built",
+    "selector": "#propertyDetailsSectionContentSubCon_BuiltIn > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.356042"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type_summary",
+    "selector": "#propertyDetailsSectionContentSubCon_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.367979"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.features",
+    "selector": "#propertyDetailsSectionVal_Features > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.382454"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.cooling",
+    "selector": "#propertyDetailsSectionVal_Cooling > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.398391"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.heating_type",
+    "selector": "#propertyDetailsSectionVal_HeatingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.411392"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.sewer",
+    "selector": "#propertyDetailsSectionVal_UtilitySewer > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.423394"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.water",
+    "selector": "#propertyDetailsSectionVal_UtilityWater > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.435528"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.pool_type",
+    "selector": "#propertyDetailsSectionVal_PoolType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.447526"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.amenities_nearby",
+    "selector": "#propertyDetailsSectionVal_AmenitiesNearby > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.458526"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.parking_type",
+    "selector": "#propertyDetailsSectionVal_ParkingType > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.469799"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.total_parking",
+    "selector": "#propertyDetailsSectionVal_TotalParkingSpaces > div.propertyDetailsSectionContentValue",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.480518"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.description",
+    "selector": "#listingDescriptionCon",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.491521"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_name",
+    "selector": "#listingAgentName",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.503519"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.512308"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.521309"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_phone",
+    "selector": "#listingAgentPhone a[href^='tel:']",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.530600"
+  },
+  {
+    "site": "realtor.ca",
+    "name": "detail.contact_email",
+    "selector": "#listingAgentEmail a[href^='mailto:']",
+    "url": "https://www.realtor.ca/real-estate/29851368/7810-rue-madeleine-huguenin-montreal-mercierhochelaga-maisonneuve-mercier",
+    "ts": "2026-06-04T10:28:58.539604"
+  }
+]

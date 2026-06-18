@@ -43,3 +43,60 @@
 2026-06-03 13:25:48,339 INFO mail.gmail_client: NullEmailClient draft (not sent): to='' subject='Inquiry about rental at Domaine Bellerive Apartments - 1 Place De La Belle-Rive, Laval, QC'
 2026-06-03 13:25:48,390 INFO data.store: Saved 234 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Refine Interface\Final\rental_aggregator\data\store.json
 2026-06-03 13:25:48,413 INFO data.store: Loaded 234 listings from store
+2026-06-04 13:10:07,543 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:10:07,561 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:10:47,388 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:10:59,048 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:10:59,064 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:10:59,271 INFO data.store: Saved 314 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Minimize Scrapers + Fix Mail\T3\A\rental_aggregator\data\store.json
+2026-06-04 13:11:41,126 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:11:41,159 WARNING excel.interface: Cannot send inquiry — Contact Email is empty in Config
+2026-06-04 13:11:41,223 INFO data.store: Saved 314 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Minimize Scrapers + Fix Mail\T3\A\rental_aggregator\data\store.json
+2026-06-04 13:11:41,251 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:12:06,729 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:12:06,753 WARNING excel.interface: Cannot send inquiry — Contact Email is empty in Config
+2026-06-04 13:12:06,817 INFO data.store: Saved 314 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Minimize Scrapers + Fix Mail\T3\A\rental_aggregator\data\store.json
+2026-06-04 13:12:06,843 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:20:40,728 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:20:40,762 WARNING excel.interface: Cannot send inquiry — Contact Email is empty in Config
+2026-06-04 13:20:40,827 INFO data.store: Saved 314 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Minimize Scrapers + Fix Mail\T3\A\rental_aggregator\data\store.json
+2026-06-04 13:20:40,852 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:22:05,734 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:22:05,764 WARNING excel.interface: Cannot send inquiry — Contact Email is empty in Config
+2026-06-04 13:22:05,827 INFO data.store: Saved 314 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Minimize Scrapers + Fix Mail\T3\A\rental_aggregator\data\store.json
+2026-06-04 13:22:05,853 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:22:12,773 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:22:21,039 INFO data.store: Loaded 314 listings from store
+2026-06-04 13:22:21,820 INFO scrapers.base_scraper: Starting realtor.ca scraper
+2026-06-04 13:22:22,882 INFO undetected_chromedriver.patcher: patching driver executable C:\Users\salem\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2026-06-04 13:22:25,511 INFO scrapers.base_scraper: Navigating to: https://www.realtor.ca/real-estate/29790944/2001-av-marlowe-2-montreal-cote-des-neigesnotre-dame-de-grace-notre-dame-de-grace
+2026-06-04 13:22:45,848 ERROR excel.interface: Inquiry failed for 629154f1674f7bf6: Message: element not interactable
+  (Session info: chrome=148.0.7778.218); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	undetected_chromedriver!GetHandleVerifier [0x8cb593+105d3]
+	undetected_chromedriver!GetHandleVerifier [0x8cb6c4+10704]
+	undetected_chromedriver!(No symbol) [0x6d1cde]
+	undetected_chromedriver!(No symbol) [0x71c3d4]
+	undetected_chromedriver!(No symbol) [0x712368]
+	undetected_chromedriver!(No symbol) [0x73d77c]
+	undetected_chromedriver!(No symbol) [0x711da4]
+	undetected_chromedriver!(No symbol) [0x73d944]
+	undetected_chromedriver!(No symbol) [0x75a936]
+	undetected_chromedriver!(No symbol) [0x73d516]
+	undetected_chromedriver!(No symbol) [0x7108e9]
+	undetected_chromedriver!(No symbol) [0x7116a4]
+	undetected_chromedriver!GetHandleVerifier [0xb53014+298054]
+	undetected_chromedriver!GetHandleVerifier [0xb4e603+293643]
+	undetected_chromedriver!GetHandleVerifier [0xb6ea05+2b3a45]
+	undetected_chromedriver!GetHandleVerifier [0x8e54e8+2a528]
+	undetected_chromedriver!GetHandleVerifier [0x8ecd1d+31d5d]
+	undetected_chromedriver!GetHandleVerifier [0x8d3e68+18ea8]
+	undetected_chromedriver!GetHandleVerifier [0x8d4015+19055]
+	undetected_chromedriver!GetHandleVerifier [0x8bd65f+269f]
+	KERNEL32!BaseThreadInitThunk [0x76215d49+19]
+	ntdll!RtlInitializeExceptionChain [0x76f0d83b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76f0d7c1+231]
+
+2026-06-04 13:22:46,485 INFO scrapers.base_scraper: Stopped realtor.ca scraper
+2026-06-04 13:22:46,553 INFO data.store: Saved 314 listings to C:\Users\salem\Desktop\Data Annotation\Teach a Programming Assistant\Challenging Prompts v2\rental-sheet\Minimize Scrapers + Fix Mail\T3\A\rental_aggregator\data\store.json
+2026-06-04 13:22:46,580 INFO data.store: Loaded 314 listings from store
